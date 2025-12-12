@@ -2,16 +2,21 @@ import Link from 'next/link';
 import React from 'react';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 
-const Button = ({ name,className }: any) => {
+export interface IButton {
+  name: String;
+  className?: string;
+  width?: boolean;
+}
+const Button = ({ name, className, width }: any) => {
   return (
     <Link
       href="/contact"
-      className={`${className} gap- relative my-auto flex w-fit rounded-[60px] bg-custom-gradient py-[11px] pl-[28px] pr-[20px] font-nunito text-xs font-normal text-[#FFFFFF]`}
+      className={`${className} relative flex ${width ? 'w-full' : 'w-fit'} items-center justify-center gap-2 rounded-[60px] bg-custom-gradient px-[28px] py-[11px] font-nunito text-xs font-normal text-white`}
     >
-      <p className="my-auto">{name}</p>
+      <span>{name}</span>
       <IoIosArrowRoundForward
-        size={30}
-        className="my-auto transform"
+        size={25}
+        className="transform"
         style={{ transform: 'rotate(310deg)' }}
       />
     </Link>

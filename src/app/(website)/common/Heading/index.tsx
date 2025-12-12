@@ -9,6 +9,7 @@ export interface IHeading {
   isStyped?: boolean;
   isVarticle?: boolean;
   isBgWhite?: boolean;
+  className?: string;
 }
 const Heading = ({
   subTitle,
@@ -18,9 +19,10 @@ const Heading = ({
   isStyped,
   isVarticle,
   isBgWhite,
+  className,
 }: IHeading) => {
   return (
-    <div className=" ">
+    <div className={className}>
       {isStyped ? (
         <div>
           <div
@@ -54,7 +56,9 @@ const Heading = ({
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-3 gap-5">
+            <div
+              className={`grid ${isBgWhite ? 'grid-cols-1' : 'grid-cols-3'} gap-5`}
+            >
               <div
                 className={`col-span-2 w-[60%] leading-[60px] ${isBgWhite ? 'text-black' : 'text-white'} `}
               >

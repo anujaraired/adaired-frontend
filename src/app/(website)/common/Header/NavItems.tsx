@@ -9,9 +9,9 @@ import { Separator } from '@/@core/ui/shadcn-ui/separator';
 import axios from 'axios';
 import CldImage from '../../components/CloudinaryImageComponent';
 import { calculateReadingTime } from '@/@core/utils/calculateReadingTime';
-import { IoIosArrowRoundForward } from "react-icons/io";
-import { IoIosArrowDown } from "react-icons/io";
-
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import { IoIosArrowDown } from 'react-icons/io';
+import Botton from '../Button';
 // Type definitions
 interface NavItem {
   label: string;
@@ -87,14 +87,7 @@ const NavItems = () => {
           >
             Book demo
           </Link> */}
-          <Link
-            href="/contact"
-            className="flex my-auto gap- relative font-nunito text-xs font-normal bg-custom-gradient pl-[28px] pr-[20px] py-[11px] rounded-[60px] text-[#FFFFFF] "
-          >
-            <p className='my-auto'>Book A Demo</p>
-            <IoIosArrowRoundForward size={30} className="my-auto transform"
-              style={{ transform: 'rotate(310deg)' }} />
-          </Link>
+          <Botton name="Book A Demo" />
         </div>
       )}
     </div>
@@ -162,7 +155,7 @@ const Item = ({
                             >
                               <div className="flex items-center gap-2 text-gray-400 transition-all duration-300 group-hover/subMenu:text-[#FB9100]">
                                 <div className="h-[13px] w-[13px] rounded-sm bg-[#ddd]" />
-                                <span className="text-xs font-nunito">
+                                <span className="font-nunito text-xs">
                                   {subSubItem.name}
                                 </span>
                               </div>
@@ -290,7 +283,7 @@ const Item = ({
             // <Icons.IcBaselineArrowDropDown
             //   className={cn('h-4 w-4 transition-all group-hover:rotate-180')}
             // />
-            <IoIosArrowDown className='my-auto' />
+            <IoIosArrowDown className="my-auto" />
           )}
         </Link>
         {renderSubmenu}

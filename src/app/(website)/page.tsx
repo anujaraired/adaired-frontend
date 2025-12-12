@@ -1,19 +1,17 @@
 'use client';
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
 import Link from 'next/link';
 import Image from 'next/image';
 import { Icons } from '@web-components/Icons';
 import MaxWidthWrapper from '@/app/(website)/components/MaxWidthWrapper';
-import BannerSlider from '@/app/(website)/components/BannerSlider';
 import CldImage from '@/app/(website)/components/CloudinaryImageComponent';
 import parse from 'html-react-parser';
 import { InfiniteMovingCards } from '../../@core/ui/aceternity-ui/infinite-moving-cards';
-import { HoverEffect } from '../../@core/ui/aceternity-ui/card-hover-effect';
 import HomepageForm from './components/forms/HomepageForm';
 import img from '../../../public/assets/images/hero_image_bhw.png';
 import expectImg from '../../../public/not-found.png';
-
+import chat from '../../../public/assets/icons/chat.png';
 import win from '../../../public/assets/icons/win.png';
 import { IoCheckmark } from 'react-icons/io5';
 
@@ -28,7 +26,8 @@ import {
   ServiceSectionData,
   WhyChooseSectionData,
   CaseStudySectionData,
-  TestimonialSectionData
+  TestimonialSectionData,
+  BlogSectionData,
 } from '../../@core/data/website/Homepage';
 import HereComponent from './components/HereComponent';
 import Heading from './common/Heading';
@@ -41,23 +40,23 @@ import WhyChooseTopVector from '../../../public/assets/images/home/WhyChooseTopV
 import WhyChooseBottomVector from '../../../public/assets/images/home/WhyChooseBottomVector.png';
 import ChooseIcon from '../../../public/assets/icons/Group 26.png';
 import ChooseIcon2 from '../../../public/assets/icons/Group 1000004066.png';
-
+import InputField from './components/UI/InputField';
+import SelectField from './components/UI/SelectField';
+import MessageField from './components/UI/MessageField';
 import seo from '../../../public/assets/images/home/seo.png';
 import queen from '../../../public/assets/icons/Queen.png';
 import curve from '../../../public/assets/icons/curve_Imag.png';
-
-import { service } from '@/data/zoho-leads-create';
 import studiesImg from '../../../public/assets/images/home/studies.png';
-import testimonialBg from '../../../public/assets/images/home/testimonial-bg.png';
-
 import { IoIosArrowRoundForward } from 'react-icons/io';
+import { MdOutlineStar } from 'react-icons/md';
+import google from '../../../public/assets/icons/goole.png';
+import blogImg from '../../../public/assets/images/home/blog.png';
+import blog_bg_opecity from '../../../public/assets/images/home/blog_bg_opecity.png';
 
 export default function HomePage() {
   return (
     <>
-      {/* <BannerSlider /> */}
       <HereComponent />
-      {/* <ManageGrid /> */}
       <About />
       <Awards />
       <Services />
@@ -65,53 +64,11 @@ export default function HomePage() {
       <WhyChoose />
       <CaseStudy />
       <Testimonial />
-      <LogoSlider />
-      <Growth />
       <Contact />
+      <Blogs />
     </>
   );
 }
-
-const ManageGrid = () => {
-  return (
-    <section className="flex items-center justify-between bg-slate-200 py-6 pt-6 transition-all">
-      <div className="hidden md:block">
-        <CldImage
-          height={300}
-          width={150}
-          src="Static Website Images/Splash_left"
-          alt="Splash Left Image"
-        />
-      </div>
-      <MaxWidthWrapper>
-        <div className="flex flex-col items-center text-center">
-          <h2 className="font-dm text-3xl font-normal md:text-4xl">
-            {' '}
-            Digital Marketing Services For The Most Ambitious Enterprises
-          </h2>
-          <div className="relative py-6">
-            <div className="absolute left-[-100px] top-1/2 h-px w-20 -translate-y-1/2 transform bg-[#A7A9AC]"></div>
-            <div className="absolute right-[-100px] top-1/2 h-px w-20 -translate-y-1/2 transform bg-[#A7A9AC]"></div>
-            <Icons.NimbusMarketing className="h-14 w-14 rounded-full bg-[#8EC640] p-2 text-white" />
-          </div>
-
-          <p className="max-w-[900px] font-nunito text-base sm:text-xl md:text-2xl">
-            We work with businesses that want to engage better, dominate SERPs,
-            and achieve more than just website traffic.
-          </p>
-        </div>
-      </MaxWidthWrapper>
-      <div className="hidden md:block">
-        <CldImage
-          height={300}
-          width={150}
-          src="Static Website Images/Splash_right"
-          alt="Splash Left Image"
-        />
-      </div>
-    </section>
-  );
-};
 
 const About = () => {
   const {
@@ -445,7 +402,7 @@ const Testimonial = () => {
   return (
     <section className="relative bg-[#FFFBF6] py-6 lg:py-[6rem]">
       <div className="relative z-20">
-        <MaxWidthWrapper>
+        <div className="flex w-[100%] justify-center">
           <Heading
             subTitle={subTitle}
             title={title}
@@ -454,73 +411,194 @@ const Testimonial = () => {
             isStyped={true}
             isVarticle={true}
             isBgWhite={true}
+            className="w-[50%]"
           />
-          {/* <div className="mt-[4rem] grid grid-cols-1 gap-[2rem] md:grid-cols-4">
-            {points?.map((item, idx: any) => {
-              const lastCard = idx === points.length - 1;
-              const isSecond = idx === 1;
-              const hovered = isHover === idx;
-
-              return (
-                <div
-                  key={idx}
-                  onMouseEnter={() => setIsHover(idx)}
-                  onMouseLeave={() => setIsHover(1)}
-                  className="relative"
-                >
-                  <div className="flex flex-col items-center gap-3 text-center">
-                    <div className="relative flex h-[6rem] w-[6rem] items-center justify-center rounded-full border border-white backdrop-blur-md">
-                      <Image
-                        src={hovered ? ChooseIcon2 : ChooseIcon}
-                        width={70}
-                        height={70}
-                        alt=""
-                        className={`absolute bottom-0 rounded-full object-contain p-[1rem] ${hovered ? 'bg-[#FF9E2C] text-white' : 'bg-white'} `}
-                      />
+        </div>
+        <div className="grid grid-cols-1 gap-5 px-[3%] pt-[2.5rem] md:grid-cols-3">
+          {testimonials?.map((testimonial, idx: number) => {
+            return (
+              <div
+                className={`rounded-2xl border border-transparent bg-white p-[2rem] transition-all duration-300 hover:border-8 hover:border-[#FFEFDA] ${''}`}
+              >
+                <div className="font-nunito text-sm text-[#262626]">
+                  {testimonial?.description}
+                  <div className="flex justify-between pt-[2rem]">
+                    <div>
+                      <p className="font-nunito text-sm font-medium">
+                        {testimonial?.name}
+                      </p>
+                      <span className="flex gap-1">
+                        <MdOutlineStar size={16} className="text-[#FB9100]" />
+                        <MdOutlineStar size={16} className="text-[#FB9100]" />
+                        <MdOutlineStar size={16} className="text-[#FB9100]" />
+                        <MdOutlineStar size={16} className="text-[#FB9100]" />
+                        <MdOutlineStar size={16} className="text-[#FB9100]" />
+                      </span>
                     </div>
-
-                    <div
-                      className={`mt-[-2.5rem] h-[340px] w-[296px] cursor-pointer rounded-3xl px-[1.5rem] pb-[1.5rem] pt-[3rem] transition-all duration-300 ${hovered ? 'bg-white text-black' : 'bg-[#1A5A9621] text-white'} `}
-                    >
-                      <p
-                        className={`font-nunito text-[24px] ${hovered ? 'font-[600]' : 'font-normal'}`}
-                      >
-                        {item?.title}
-                      </p>
-
-                      <p className={`pt-[1rem] font-nunito text-xs`}>
-                        {item?.description}
-                      </p>
+                    <div className="h-[25px] w-[95px]">
+                      <Image
+                        src={google}
+                        width={95}
+                        height={25}
+                        alt='"sd'
+                        unoptimized
+                      />
                     </div>
                   </div>
                 </div>
-              );
-            })}
-          </div> */}
-        </MaxWidthWrapper>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
 };
 
-const LogoSlider = () => {
-  const { title, description, logos } = LogoSliderSectionData;
+const Contact = () => {
+  const { image, subTitle, title, description } = ContactSectionData;
+
   return (
-    <section className="bg-[#f8f8f8] py-6 sm:py-12">
-      <MaxWidthWrapper className="flex flex-col items-center text-center">
-        <h2 className="py-2 font-dm text-2xl font-normal md:text-3xl lg:text-4xl">
-          {title}
-        </h2>
-        <p className="mb-4 max-w-[1000px] py-2 font-nunito text-base sm:text-lg">
-          {description}
-        </p>
-        <div className="w-full py-2 antialiased">
-          <InfiniteMovingCards
-            items={logos}
-            direction="left"
-            speed="slow"
-            itemClassName="border border-[#E5E5E5] bg-white grayscale hover:grayscale-0 px-2 py-2 sm:py-5 sm:px-8"
+    <section className="">
+      <MaxWidthWrapper className="py-[6rem]">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div>
+            <Heading
+              subTitle={subTitle}
+              title={title}
+              span={''}
+              description={''}
+              isStyped={true}
+              isBgWhite={true}
+            />
+            <div className="h-full w-[45%] overflow-hidden">
+              <Image
+                src={expectImg}
+                alt="About Image"
+                height={507}
+                width={642}
+                className="rounded-lg border-[#e3e3e3] p-1"
+              />
+            </div>
+          </div>
+          <div className="h-[650px] w-[620px] flex-1 space-y-8 rounded-2xl p-[3.25rem] text-center shadow-[0_0_20px_rgba(66,71,76,0.08)] md:text-left">
+            <div className="flex justify-between">
+              <div>
+                <p className="font-nunito text-[32px] font-[500] text-[#120A21]">
+                  Contact Us
+                </p>
+                <p className="font-nunito text-xs font-normal text-[#666666]">
+                  Lorem ipsum dolor sit amet, consectetur elit
+                </p>
+              </div>
+              <Image src={chat} width={111} height={73} alt="chat" />
+            </div>
+            <div>
+              <InputField
+                className="my-2"
+                name=""
+                value=""
+                handleChange={() => console.log('d')}
+                placeholder="Name"
+              />
+              <div className="grid grid-cols-2 gap-3">
+                <InputField
+                  className="my-2"
+                  name=""
+                  value=""
+                  handleChange={() => console.log('d')}
+                  placeholder="Email"
+                />
+                <InputField
+                  className="my-2"
+                  name=""
+                  value=""
+                  handleChange={() => console.log('d')}
+                  placeholder="Phone No"
+                />
+              </div>
+              <SelectField
+                className="my-2"
+                name=""
+                value=""
+                handleChange={() => console.log('d')}
+                placeholder="Service"
+                options={[
+                  { label: 'Service 1', value: 'service1' },
+                  { label: 'Service 2', value: 'service2' },
+                ]}
+              />
+              <MessageField
+                name={''}
+                value={''}
+                handleChange={function (
+                  e: React.ChangeEvent<HTMLTextAreaElement>
+                ): void {
+                  throw new Error('Function not implemented.');
+                }}
+                placeholder="Message"
+                className="my-2"
+              />
+            </div>
+            <Button name="Submit" type="button" className="w-full" />
+          </div>
+        </div>
+      </MaxWidthWrapper>
+    </section>
+  );
+};
+
+const Blogs = () => {
+  const { subTitle, title, description, blogs } = BlogSectionData;
+  const [isHover, setIsHover] = useState<number | null>(1);
+  return (
+    <section className="relative py-6 md:py-[6rem]">
+      <div className="absolute inset-0 -z-10 h-[500px]">
+        <Image src={blog_bg_opecity} fill alt="blog" className="object-cover" />
+      </div>
+      <MaxWidthWrapper>
+        <div className="flex w-[100%] justify-center">
+          <Heading
+            subTitle={subTitle}
+            title={title}
+            span={''}
+            description={description}
+            isStyped={true}
+            isVarticle={true}
+            isBgWhite={true}
+            className="w-[70%]"
           />
+        </div>
+        <div className="grid grid-cols-1 gap-7 py-[1.5rem] pt-[3rem] md:grid-cols-3">
+          {blogs?.map((blog, idx: number) => {
+            return (
+              <div
+                key={idx}
+                className={`rounded-3xl shadow-[0_0_20px_rgba(0,0,0,0.14)]`}
+              >
+                <div className="relative h-[252px] w-full">
+                  <Image src={blogImg} fill alt="" className="object-cover2" />
+                </div>
+                <div className="p-[2rem]">
+                  <p className="pb-[0.5rem] font-nunito text-sm font-[500] text-[#101C3A]">
+                    {blog.title}
+                  </p>
+                  <div className="flex w-full justify-between border-t pt-[1rem]">
+                    <Button
+                      name="Read More"
+                      className="tex-[14px] !bg-yellow-200 py-[6px]"
+                    />
+                    <p className="my-auto font-nunito text-xs font-medium text-[#C4C4C4]">
+                      30, July 2025
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="mt-[2rem] flex items-center justify-center">
+          <Button name="View All Blogs" />
         </div>
       </MaxWidthWrapper>
     </section>
@@ -614,72 +692,6 @@ const Services = () => {
   );
 };
 
-const Growth = () => {
-  const {
-    images,
-    subTitle,
-    title,
-    description,
-    description_II,
-    features,
-    pinkBorderText,
-    btnHref,
-    btnText,
-  } = GrowthSectionData;
-  return (
-    <section className="py-7 sm:py-14">
-      <MaxWidthWrapper className="flex flex-col items-center gap-16 lg:flex-row lg:items-start xl:gap-36">
-        <div className="relative ml-2 mr-4 flex-1 lg:ml-2 lg:mr-0">
-          {images.map((img, index) => (
-            <div key={index} className={img.className ? img.className : ''}>
-              <CldImage
-                src={img.src}
-                alt={img.alt}
-                height={img.height}
-                width={img.width}
-              />
-            </div>
-          ))}
-        </div>
-        <div className="flex-1">
-          <h3 className="relative inline pl-16 font-nunito text-lg text-[#515151] md:pl-20">
-            <div className="absolute left-0 top-1/2 h-px w-12 -translate-y-1/2 transform bg-[#A7A9AC] md:w-16" />
-            {subTitle}
-          </h3>
-          <h2 className="py-2 font-dm text-[1.688rem] font-normal md:text-4xl">
-            {title}
-          </h2>
-          <p className="py-2 font-nunito text-base sm:text-lg">{description}</p>
-          <ul className="grid gap-3 py-2 text-left sm:grid-cols-2 sm:gap-0">
-            {features.map((feature, index) => (
-              <li
-                key={index}
-                className="flex items-center gap-1 border p-2 font-nunito text-lg sm:border-none"
-              >
-                <Icons.PinkArrowMarker className="text-[#BC1D8D]" />
-                {feature}
-              </li>
-            ))}
-          </ul>
-          <p className="py-2 font-nunito text-base sm:text-lg">
-            {description_II}
-          </p>
-          <p className="border-l-8 border-[#BC1D8D] bg-[#FFF9FD] px-2 py-2 font-nunito text-base sm:text-lg">
-            {pinkBorderText}
-          </p>
-          <Button
-            title={btnText}
-            className="mt-5 border border-gray-200 bg-white text-black"
-            svgClassName="bg-[#F89520]"
-            type="button"
-            navigateTo={btnHref}
-          />
-        </div>
-      </MaxWidthWrapper>
-    </section>
-  );
-};
-
 const Awards = () => {
   return (
     <section className="bg-[#FAFDFF] py-6 sm:py-12">
@@ -693,49 +705,6 @@ const Awards = () => {
           />
         </div>
       </MaxWidthWrapper>
-    </section>
-  );
-};
-
-const Contact = () => {
-  const { title, description, contactDetails } = ContactSectionData;
-  return (
-    <section className="pt-6 sm:pt-12">
-      <div className="bg-[#f8f8f8] pt-4 lg:bg-white lg:pt-0">
-        <MaxWidthWrapper>
-          <h2 className="py-2 font-dm text-4xl font-normal md:text-5xl lg:max-w-xl lg:text-6xl xl:text-7xl">
-            {title}
-          </h2>
-        </MaxWidthWrapper>
-      </div>
-      <div className="bg-[#f8f8f8] pb-8 md:pb-4">
-        <MaxWidthWrapper className="flex flex-col gap-10 pb-6 lg:flex-row lg:py-6">
-          <div className="flex-1 space-y-5">
-            <p className="py-2 font-nunito text-lg text-[#515151] sm:text-xl md:text-2xl">
-              {description}
-            </p>
-            <div className="grid grid-cols-1 items-center space-y-6 sm:grid-cols-2 lg:grid-cols-1">
-              {contactDetails.map(({ href, imageSrc, alt, text }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="flex flex-row items-center gap-4 sm:flex-col lg:flex-row"
-                >
-                  <Image src={imageSrc} height={40} width={40} alt={alt} />
-                  <p className="text-left font-nunito text-lg font-semibold sm:text-center lg:text-left lg:text-2xl">
-                    {text}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div className="flex-1 lg:relative">
-            <div className="w-full rounded-lg border-4 border-[#f8f8f8] lg:-mt-44">
-              <HomepageForm />
-            </div>
-          </div>
-        </MaxWidthWrapper>
-      </div>
     </section>
   );
 };

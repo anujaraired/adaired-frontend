@@ -158,24 +158,27 @@ export const TestimonialSectionData = {
   testimonials: [
     {
       image: 'Static Website Images/homepage_about2',
-      title: 'Digital Agency Businesses',
+      name: 'Sherry Lin',
       description:
-        "We’re a digital agency that transforms businesses into brands. With the perfect blend of strategy and creativity, we help you stand out.",
+        'We’re a digital agency that transforms businesses into brands. With the perfect blend of strategy and creativity, we help you stand out.',
       bgColor: '#FFF4F3',
+      rating: 5,
     },
     {
       image: 'Static Website Images/homepage_about1',
-      title: 'Digital Agency Businesses',
+      name: 'Sherry Lin',
       description:
-        'Every client is assigned a single point of contact who understands your objectives, keeps everything on track, and ensures effective communication from beginning to end. There will be no confusion or delays, only seamless project management.',
+        'We’re a digital agency that transforms businesses into brands. With the perfect blend of strategy and creativity, we help you stand out.',
       bgColor: '#D7EBFF',
+      rating: 5,
     },
     {
       image: 'Static Website Images/homepage_about2',
-      title: 'Digital Agency Businesses',
+      name: 'Sherry Lin',
       description:
-        'We believe in honesty at every step. You always know what we’re doing, why we’re doing it, and how it benefits your brand. Clear updates, open communication, and performance reports you can trust.',
+        'We’re a digital agency that transforms businesses into brands. With the perfect blend of strategy and creativity, we help you stand out.',
       bgColor: '#E1F2E2',
+      rating: 5,
     },
   ],
 };
@@ -417,7 +420,9 @@ export const AwardsSectionData = [
 ];
 
 export const ContactSectionData = {
-  title: 'Ready To Win More Customers?',
+  image: 'Static Website Images/contact_us_image',
+  subTitle: 'CONTACT US',
+  title: 'Reach Us Today',
   description:
     'Connect for more website traffic, qualified leads, and an established online brand image.',
   contactDetails: [
@@ -445,5 +450,40 @@ export const ContactSectionData = {
     //   alt: 'Telegram Logo',
     //   text: 'Adaired Digital Media',
     // },
+  ],
+};
+
+export const BlogSectionData = {
+  image: 'Static Website Images/about_main_anwqk5',
+  subTitle: 'BlOGS',
+  title: 'Latest From Our Blog',
+  span: 'Turns Businesses Into Brands',
+  description:
+    'We’re a digital agency that transforms businesses into brands. With the perfect blend of strategy and creativity.',
+  blogs: [
+    {
+      image: 'Static Website Images/homepage_about2',
+      title: 'We’re a digital agency that transforms businesses into brands.',
+      description:
+        'We’re a digital agency that transforms businesses into brands. With the perfect blend of strategy and creativity, we help you stand out.',
+      bgColor: '#FFF4F3',
+      rating: 5,
+    },
+    {
+      image: 'Static Website Images/homepage_about1',
+      title: 'We’re a digital agency that transforms businesses into brands.',
+      description:
+        'We’re a digital agency that transforms businesses into brands. With the perfect blend of strategy and creativity, we help you stand out.',
+      bgColor: '#D7EBFF',
+      rating: 5,
+    },
+    {
+      image: 'Static Website Images/homepage_about2',
+      title: 'We’re a digital agency that transforms businesses into brands.',
+      description:
+        'We’re a digital agency that transforms businesses into brands. With the perfect blend of strategy and creativity, we help you stand out.',
+      bgColor: '#E1F2E2',
+      rating: 5,
+    },
   ],
 };
