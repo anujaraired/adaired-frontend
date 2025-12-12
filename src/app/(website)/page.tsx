@@ -57,13 +57,13 @@ export default function HomePage() {
   return (
     <>
       <HereComponent />
-      {/* <About /> */}
-      {/* <Awards /> */}
-      {/* <Services /> */}
-      {/* <Expect /> */}
-      {/* <WhyChoose /> */}
-      {/* <CaseStudy /> */}
-      {/* <Testimonial /> */}
+      <About />
+      <Awards />
+      <Services />
+      <Expect />
+      <WhyChoose />
+      <CaseStudy />
+      <Testimonial />
       <Contact />
       <Blogs />
     </>
