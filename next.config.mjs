@@ -1,6 +1,31 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  output: 'standalone', // ensures runtime build only (optional)
+  experimental: {
+    // disable static export / enable full SSR
+    dynamicIO: true,
+    isrFlushToDisk: false,
+  },
+  generateEtags: false,
+  trailingSlash: false,
+
+  // 🔥 turn off static export
+  experimental: {
+    serverActions: {
+      allowedOrigins: ['*'],
+    },
+  },
+
+  // 🔥 MOST IMPORTANT:
+  // DO NOT ALLOW NEXT TO STATIC EXPORT
+  // Forces ALL pages to be rendered at runtime
+  staticPageGenerationTimeout: 0,
+  amp: { canonicalBase: '/' },
+  output: undefined,
+
+  // 👇 Keep your existing config
+  fetchCache: 'force-no-store',
   images: {
     remotePatterns: [
       {

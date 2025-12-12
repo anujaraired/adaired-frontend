@@ -10,7 +10,7 @@ import Button from '@web-components/Button';
 import Image from 'next/image';
 import { formatDate } from '@core/utils/format-date';
 import Link from 'next/link';
-import { getExcerpt } from '../../(mainWebsite)/blog/page';
+// import { getExcerpt } from '../../(mainWebsite)/blog/page';
 
 interface Data {
   featuredImage: string;
@@ -47,7 +47,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
         </CardTitle>
       </CardHeader>
       <CardContent className="p-4 pt-0 text-left font-nunito text-lg">
-        <div className="line-clamp-3">{getExcerpt(data.postDescription)}</div>
+        {/* <div className="line-clamp-3">{getExcerpt(data.postDescription)}</div> */}
       </CardContent>
       <div className="p-4">
         <Button

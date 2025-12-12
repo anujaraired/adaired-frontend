@@ -133,7 +133,10 @@ const HomepageForm = () => {
                 value={value}
                 options={services}
                 suffix={<FaCaretDown />}
-                onChange={(v: SelectOption) => onChange(v.label)}
+                onChange={(v) => {
+                  const option = v as SelectOption;
+                  onChange(option.label);
+                }}
                 error={errors?.interest?.message}
                 displayValue={(selected: string) =>
                   services?.find((r) => r.label === selected)?.label ?? ''
@@ -182,7 +185,7 @@ const HomepageForm = () => {
 
         <Button
           title="Send Your Enquiry"
-          className="mt-5 bg-white text-black border border-gray-200"
+          className="mt-5 border border-gray-200 bg-white text-black"
           svgClassName="bg-[#F89520]"
           type="submit"
         />
