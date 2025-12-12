@@ -57,13 +57,13 @@ export default function HomePage() {
   return (
     <>
       <HereComponent />
-      <About />
-      <Awards />
-      <Services />
-      <Expect />
-      <WhyChoose />
-      <CaseStudy />
-      <Testimonial />
+      {/* <About /> */}
+      {/* <Awards /> */}
+      {/* <Services /> */}
+      {/* <Expect /> */}
+      {/* <WhyChoose /> */}
+      {/* <CaseStudy /> */}
+      {/* <Testimonial /> */}
       <Contact />
       <Blogs />
     </>
@@ -460,7 +460,7 @@ const Contact = () => {
 
   return (
     <section className="">
-      <MaxWidthWrapper className="py-[6rem]">
+      <MaxWidthWrapper className="py-[2rem] md:py-[6rem]">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div>
             <Heading
@@ -481,13 +481,13 @@ const Contact = () => {
               />
             </div>
           </div>
-          <div className="h-[650px] w-[620px] flex-1 space-y-8 rounded-2xl p-[3.25rem] text-center shadow-[0_0_20px_rgba(66,71,76,0.08)] md:text-left">
+          <div className="flex-1 space-y-8 rounded-2xl p-[1rem] text-center shadow-[0_0_20px_rgba(66,71,76,0.08)] md:h-[650px] md:w-[620px] md:p-[3.25rem] md:text-left">
             <div className="flex justify-between">
               <div>
-                <p className="font-nunito text-[32px] font-[500] text-[#120A21]">
+                <p className="text:[2rem] text-left font-nunito font-[500] text-[#120A21] md:text-[32px]">
                   Contact Us
                 </p>
-                <p className="font-nunito text-xs font-normal text-[#666666]">
+                <p className="text-left font-nunito text-[14px] font-normal text-[#666666] md:text-center md:text-xs">
                   Lorem ipsum dolor sit amet, consectetur elit
                 </p>
               </div>
@@ -501,16 +501,16 @@ const Contact = () => {
                 handleChange={() => console.log('d')}
                 placeholder="Name"
               />
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                 <InputField
-                  className="my-2"
+                  className="mt-2 md:my-2"
                   name=""
                   value=""
                   handleChange={() => console.log('d')}
                   placeholder="Email"
                 />
                 <InputField
-                  className="my-2"
+                  className="mb-2 md:my-2"
                   name=""
                   value=""
                   handleChange={() => console.log('d')}
@@ -566,7 +566,7 @@ const Blogs = () => {
             isStyped={true}
             isVarticle={true}
             isBgWhite={true}
-            className="w-[70%]"
+            className="w-[100%] md:w-[70%]"
           />
         </div>
         <div className="grid grid-cols-1 gap-7 py-[1.5rem] pt-[3rem] md:grid-cols-3">
@@ -576,11 +576,11 @@ const Blogs = () => {
                 key={idx}
                 className={`rounded-3xl shadow-[0_0_20px_rgba(0,0,0,0.14)]`}
               >
-                <div className="relative h-[252px] w-full">
+                <div className="relative h-[180px] w-full md:h-[252px]">
                   <Image src={blogImg} fill alt="" className="object-cover2" />
                 </div>
                 <div className="p-[2rem]">
-                  <p className="pb-[0.5rem] font-nunito text-sm font-[500] text-[#101C3A]">
+                  <p className="pb-[0.5rem] font-nunito text-xs font-[500] text-[#101C3A] md:text-sm">
                     {blog.title}
                   </p>
                   <div className="flex w-full justify-between border-t pt-[1rem]">
@@ -588,7 +588,7 @@ const Blogs = () => {
                       name="Read More"
                       className="tex-[14px] !bg-yellow-200 py-[6px]"
                     />
-                    <p className="my-auto font-nunito text-xs font-medium text-[#C4C4C4]">
+                    <p className="my-auto font-nunito text-[14px] font-medium text-[#C4C4C4] md:text-xs">
                       30, July 2025
                     </p>
                   </div>
@@ -597,7 +597,7 @@ const Blogs = () => {
             );
           })}
         </div>
-        <div className="mt-[2rem] flex items-center justify-center">
+        <div className="flex items-center justify-center md:mt-[2rem]">
           <Button name="View All Blogs" />
         </div>
       </MaxWidthWrapper>

@@ -13,7 +13,7 @@ const Button = ({ name, className, width }: any) => {
       href="/contact"
       className={`${className} relative flex ${width ? 'w-full' : 'w-fit'} items-center justify-center gap-2 rounded-[60px] bg-custom-gradient px-[28px] py-[11px] font-nunito text-xs font-normal text-white`}
     >
-      <span>{name}</span>
+      <span className='text-[14px] md:text-xs'>{name}</span>
       <IoIosArrowRoundForward
         size={25}
         className="transform"

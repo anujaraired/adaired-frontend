@@ -43,14 +43,14 @@ const Heading = ({
 
           {isVarticle ? (
             <div
-              className={`px-[15%] text-center ${isBgWhite ? 'text-black' : 'text-white'} `}
+              className={`md:px-[15%] text-center ${isBgWhite ? 'text-black' : 'text-white'} `}
             >
-              <p className="pt-4 font-nunito text-lg2 font-medium">
+              <p className="pt- md:pt-4 font-nunito text-[1.6rem] md:text-lg2 font-medium">
                 {title} <br />
                 {span}
               </p>
               <p
-                className={`py-3 font-nunito text-sm ${isBgWhite ? 'text-black' : 'text-white'} `}
+                className={`py-3 font-nunito text-xs md:text-sm ${isBgWhite ? 'text-black' : 'text-white'} `}
               >
                 {description}
               </p>
@@ -62,7 +62,7 @@ const Heading = ({
               <div
                 className={`col-span-2 w-[60%] leading-[60px] ${isBgWhite ? 'text-black' : 'text-white'} `}
               >
-                <p className="pt-4 font-nunito text-lg2 font-medium">
+                <p className="pt- md:pt-4 font-nunito text-[1.6rem] md:text-lg2 font-medium">
                   {title} <br />
                   {span}
                 </p>
