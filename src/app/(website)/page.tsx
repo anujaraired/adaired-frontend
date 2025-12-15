@@ -542,7 +542,7 @@ const Contact = () => {
                 className="my-2"
               />
             </div>
-            <Button href="" name="Submit" type="button" className="w-full" />
+            <Button href="" name="Submit"  className="w-full" />
           </div>
         </div>
       </MaxWidthWrapper>
