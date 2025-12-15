@@ -343,6 +343,7 @@ export const ServiceSectionData = {
       mainSvg: 'Content Marketing_iPYl2',
       hoverSvg: '/assets/images/content-marketing-hover.svg',
       accentColor: '#24a486',
+      lastPara: 'What You Can Expect',
     },
   ],
 };

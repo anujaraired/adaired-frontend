@@ -685,6 +685,9 @@ const Services = () => {
               <div className="absolute bottom-0 right-[2.5rem] flex items-center justify-center">
                 <Image src={seo} width={472} height={317} alt="sf" />
               </div>
+              <p className="mb-6 font-nunito text-xs font-normal text-[#262626] md:text-sm">
+                {services[activeTab].lastPara}
+              </p>
             </div>
           </div>
         </MaxWidthWrapper>
