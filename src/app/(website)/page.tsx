@@ -108,7 +108,7 @@ const About = () => {
                 alt="About Image"
                 height={87}
                 width={92}
-                className="absolute bottom-[75.5%] left-[70%] md:bottom-0 md:left-[44.25%]"
+                className="absolute bottom-[73.5%] left-[70%] md:bottom-0 md:left-[44.25%]"
               />
             </div>
           </div>
@@ -643,6 +643,7 @@ const Services = () => {
             span={''}
             description={description}
             isStyped={true}
+            
             // isVarticle={true}
           />
 

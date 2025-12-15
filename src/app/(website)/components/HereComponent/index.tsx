@@ -56,19 +56,22 @@ const HereComponent = () => {
           <span className="">WELCOME TO ADAIRED</span>
         </div>
         <div className="gap- grid grid-cols-1 md:grid-cols-2">
-          <div className="relative flex justify-between">
+          <div className="relative flex">
             <div className="w-[80%] md:w-[70%]">
               <h1 className="mt-4">
                 The Driving Force Behind the Brands That Lead
               </h1>
             </div>
-            <Image
-              src={cartoonMegaphones}
-              width={128}
-              height={100}
-              alt="32"
-              className="md:top-1/5 absolute right-[20%] top-[10%]"
-            />
+            <div className="absolute right-0 top-0 md:right-[25%]">
+              <div className="relative h-[5rem] w-[5rem] md:h-[7rem] md:w-[7rem]">
+                <Image
+                  src={cartoonMegaphones}
+                  fill
+                  alt="32"
+                  className="md:top-1/5 absolute right-0 top-[10%] object-contain md:right-[60%]"
+                />
+              </div>
+            </div>
           </div>
           <div className="pt-4 md:pt-0">
             <p className="">
@@ -84,7 +87,7 @@ const HereComponent = () => {
               </p>
               <p className="text-xxs text-black md:text-sm">🎯 Engage & Grow</p>
             </div>
-            <Button name="Start Your Journey!" className="mt-3" />
+            <Button name="Start Your Journey" className="mt-3" />
           </div>
         </div>
       </MaxWidthWrapper>
