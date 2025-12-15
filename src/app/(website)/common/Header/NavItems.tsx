@@ -11,7 +11,7 @@ import CldImage from '../../components/CloudinaryImageComponent';
 import { calculateReadingTime } from '@/@core/utils/calculateReadingTime';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import { IoIosArrowDown } from 'react-icons/io';
-import Botton from '../Button';
+import Button from '../Button';
 // Type definitions
 interface NavItem {
   label: string;
@@ -87,7 +87,7 @@ const NavItems = () => {
           >
             Book demo
           </Link> */}
-          <Botton name="Book A Demo" />
+          <Button href="/contact" name="Book A Demo" />
         </div>
       )}
     </div>

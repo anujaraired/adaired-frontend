@@ -87,7 +87,11 @@ const HereComponent = () => {
               </p>
               <p className="text-xxs text-black md:text-sm">🎯 Engage & Grow</p>
             </div>
-            <Button name="Start Your Journey" className="mt-3" />
+            <Button
+              href="/contact"
+              name="Start Your Journey"
+              className="mt-3"
+            />
           </div>
         </div>
       </MaxWidthWrapper>

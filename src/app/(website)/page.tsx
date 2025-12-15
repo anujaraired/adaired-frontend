@@ -136,12 +136,7 @@ const About = () => {
               {parse(cursive)}
             </div>
 
-            <Button
-              name={'See What’s Next'}
-              type="button"
-              navigateTo={btnHref}
-              className="mt-9"
-            />
+            <Button href={'/about'} name={'See What’s Next'} className="mt-9" />
           </div>
         </div>
       </MaxWidthWrapper>
@@ -382,7 +377,7 @@ const CaseStudy = () => {
           })}
         </div>
         <div className="flex items-center justify-center md:mt-[2rem]">
-          <Button name="View All Studies" />
+          <Button href="/case-studies" name="View All Studies" />
         </div>
       </MaxWidthWrapper>
     </section>
@@ -547,7 +542,7 @@ const Contact = () => {
                 className="my-2"
               />
             </div>
-            <Button name="Submit" type="button" className="w-full" />
+            <Button href="" name="Submit" type="button" className="w-full" />
           </div>
         </div>
       </MaxWidthWrapper>
@@ -592,6 +587,7 @@ const Blogs = () => {
                   </p>
                   <div className="flex w-full justify-between border-t pt-[1rem]">
                     <Button
+                      href={''}
                       name="Read More"
                       className="tex-[14px] !bg-yellow-200 py-[6px]"
                     />
@@ -605,7 +601,7 @@ const Blogs = () => {
           })}
         </div>
         <div className="flex items-center justify-center md:mt-[2rem]">
-          <Button name="View All Blogs" />
+          <Button href="" name="View All Blogs" />
         </div>
       </MaxWidthWrapper>
     </section>
@@ -643,7 +639,7 @@ const Services = () => {
             span={''}
             description={description}
             isStyped={true}
-            
+
             // isVarticle={true}
           />
 
