@@ -37,7 +37,7 @@ const Heading = ({
               alt=""
               className="mb-auto mt-1"
             />
-            <p className="font-nunito text-xs">{subTitle}</p>
+            <p className="text-xxs font-nunito md:text-xs">{subTitle}</p>
             <div className="my-auto h-0.5 w-24 bg-[#D7EBFF]"></div>
           </div>
 
@@ -45,12 +45,12 @@ const Heading = ({
             <div
               className={`text-center md:px-[15%] ${isBgWhite ? 'text-black' : 'text-white'} `}
             >
-              <p className="pt- font-nunito text-[1.6rem] font-medium md:pt-4 md:text-lg2">
+              <p className="pt- font-nunito text-[1.6rem] font-medium md:pt-4 md:text-3xl">
                 {title} <br />
                 {span}
               </p>
               <p
-                className={`py-3 font-nunito text-xs md:text-sm ${isBgWhite ? 'text-black' : 'text-white'} `}
+                className={`py-3 font-nunito font-normal text-xs md:text-sm ${isBgWhite ? 'text-black' : 'text-white'} `}
               >
                 {description}
               </p>
@@ -62,7 +62,7 @@ const Heading = ({
               <div
                 className={`col-span-2 w-[60%] leading-[60px] ${isBgWhite ? 'text-black' : 'text-white'} `}
               >
-                <p className="pt- font-nunito text-[1.6rem] font-medium md:pt-4 md:text-lg2">
+                <p className="pt- font-nunito text-[1.6rem] font-medium md:pt-4 md:text-3xl">
                   {title} <br />
                   {span}
                 </p>
@@ -84,11 +84,11 @@ const Heading = ({
                 alt=""
                 className="mb-auto mt-1"
               />
-              <p className="text-[14px] md:text-xs"> {subTitle}</p>
+              <p className="text-xxs font-nunito md:text-xs"> {subTitle}</p>
               <div className="mb-auto mt-3 h-0.5 w-24 bg-[#D7EBFF]"></div>
             </div>
             <div className="mt-[10px] md:mt-[-20px]">
-              <p className="font-nunito text-2xl font-medium leading-tight text-black md:text-lg2">
+              <p className="font-nunito text-lg font-medium leading-tight text-black md:text-3xl">
                 {title} <br></br>
                 {span}
               </p>

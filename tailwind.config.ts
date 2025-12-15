@@ -49,10 +49,16 @@ const config: Omit<Config, 'prefix' | 'presets' | 'content'> = {
     },
     extend: {
       fontSize: {
+        xxs: '14px',
         xs: '16px',
-        sm:"18px",
-        md:"20px",
-        lg2:"48px"
+        sm: '18px',
+        md: '20px',
+        lg: '24px',
+        xl: '32px',
+        '2xl': '40px',
+        '3xl': '48px',
+        '4xl': '56px',
+        '5xl': '64px',
       },
       fontWeight: {
         light: '300',
@@ -276,7 +282,8 @@ const config: Omit<Config, 'prefix' | 'presets' | 'content'> = {
       backgroundImage: {
         'custom-gradient':
           'linear-gradient(90deg, #1D78CE 0%, #1B5A96 33%, #1B5A96 66%, #1D78CE 100%)',
-        'footer-gradient': 'linear-gradient(90deg, #010204DB 0%, #1B5A96E0 100%)',
+        'footer-gradient':
+          'linear-gradient(90deg, #010204DB 0%, #1B5A96E0 100%)',
 
         skeleton: 'linear-gradient(90deg, transparent, #ecebeb, transparent)',
         'skeleton-dark':
@@ -285,7 +292,6 @@ const config: Omit<Config, 'prefix' | 'presets' | 'content'> = {
         'hero-image-bhw': 'url("/assets/images/hero-image_bhw.png")',
         'footer-texture': 'url("/img/footer-texture.png")',
       },
-
 
       content: {
         underline: 'url("/public/underline.svg")',

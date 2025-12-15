@@ -122,14 +122,13 @@ const About = () => {
                   <div className="mt-3 h-6 w-2 bg-[#FB9100]"></div>
 
                   <div>
-                    <div className="relative py-2 font-nunito text-xl font-semibold">
+                    <div className="relative py-2 font-nunito text-2xl font-semibold">
                       <div className="absolute bottom-1 left-1/2 h-0.5 w-14 -translate-x-1/2 rounded-lg text-black md:left-0 md:translate-x-0"></div>
-                      <p className="font-nunito text-sm font-[600] text-black">
-                        {' '}
+                      <p className="font-nunito text-sm font-semibold text-black">
                         {point.title}
                       </p>
                     </div>
-                    <p className="font-nunito text-sm font-[400] text-[#262626]">
+                    <p className="font-nunito text-xs font-normal text-[#262626] md:text-sm">
                       {point.description}
                     </p>
                   </div>
@@ -137,7 +136,7 @@ const About = () => {
               ))}
             </div>
 
-            <div className="py-2 text-xs font-semibold text-[#1B5A96]">
+            <div className="py-2 text-xs font-semibold text-[#1B5A96] md:text-sm">
               {parse(cursive)}
             </div>
 
@@ -164,7 +163,7 @@ const Expect = () => {
 
         <div className="relative block justify-between gap-2 pt-5 md:flex">
           {/* Image Section */}
-          <div className="h-full w-[100%] overflow-hidden md:w-[45%]">
+          <div className="h-full w-[100%] overflow-hidden md:w-[40%]">
             <Image
               src={expectImg}
               alt="About Image"
@@ -176,13 +175,15 @@ const Expect = () => {
 
           {/* Content Section */}
           <div className="flex-1 p-2 text-center md:text-left">
-            <p className="font-nunito text-sm font-normal">{description}</p>
+            <p className="font-nunito text-xs font-normal md:text-sm">
+              {description}
+            </p>
             {/* Points Section */}
             <div className="grid grid-cols-1 gap-2 py-6 sm:flex-row md:grid-cols-2">
               {points.map((point, index) => (
                 <div
                   key={index}
-                  className="flex gap-2 rounded-lg border border-[#FFCA8B] p-[1.25rem]"
+                  className="flex gap-4 rounded-lg border border-[#FFCA8B] p-[1.25rem]"
                 >
                   <Image
                     src={queen}
@@ -191,7 +192,7 @@ const Expect = () => {
                     alt="queen"
                     className="mb-auto"
                   />
-                  <p className="my-auto font-nunito text-sm font-[500] text-[#000000]">
+                  <p className="my-auto font-nunito text-[13px] font-medium text-[#000000] md:text-sm">
                     {point.title}
                   </p>
                 </div>
@@ -207,12 +208,12 @@ const Expect = () => {
             return (
               <div
                 key={idx}
-                className={`${!isLast && 'border-r border-[#FB9100w]'}`}
+                className={`${!isLast && 'border-[#FB9100w] md:border-r'}`}
               >
-                <p className="text-center font-nunito text-[36px] font-[600] text-[#101C3A]">
+                <p className="text-center font-nunito text-xl font-semibold text-[#101C3A] md:text-[36px]">
                   {record.number}+
                 </p>
-                <p className="text-center font-nunito text-sm text-[#656565]">
+                <p className="text-center font-nunito text-xs text-[#656565] md:text-sm">
                   {record.name}
                 </p>
               </div>
@@ -228,7 +229,7 @@ const WhyChoose = () => {
   const { subTitle, title, description, points } = WhyChooseSectionData;
   const [isHover, setIsHover] = useState<number | null>(1);
   return (
-    <section className="relative py-6 lg:py-[14rem]">
+    <section className="relative pb-[3rem] pt-[5rem] lg:py-[14rem]">
       <Image
         src={serviceBg}
         fill
@@ -249,7 +250,7 @@ const WhyChoose = () => {
       />
 
       {/* ---- Top Curve Overlay ---- */}
-      <div className="pointer-events-none absolute left-0 top-0 h-[132px] w-full">
+      <div className="pointer-events-none absolute left-0 top-0 h-[45px] w-full md:h-[132px]">
         <Image
           src={WhyChooseTopVector}
           alt="top curve"
@@ -260,7 +261,7 @@ const WhyChoose = () => {
       </div>
 
       {/* ---- Bottom Curve Overlay ---- */}
-      <div className="pointer-events-none absolute bottom-0 left-0 h-[132px] w-full">
+      <div className="pointer-events-none absolute bottom-0 left-0 h-[45px] w-full md:h-[132px]">
         <Image
           src={WhyChooseBottomVector}
           alt="bottom curve"
@@ -309,7 +310,7 @@ const WhyChoose = () => {
                       className={`mt-[-2.5rem] h-[340px] w-[296px] cursor-pointer rounded-3xl px-[1.5rem] pb-[1.5rem] pt-[3rem] transition-all duration-300 ${hovered ? 'bg-white text-black' : 'bg-[#1A5A9621] text-white'} `}
                     >
                       <p
-                        className={`font-nunito text-[24px] ${hovered ? 'font-[600]' : 'font-normal'}`}
+                        className={`font-nunito text-lg ${hovered ? 'font-semibold' : 'font-normal'}`}
                       >
                         {item?.title}
                       </p>
@@ -366,14 +367,14 @@ const CaseStudy = () => {
                 <div className="flex gap-2 py-[1rem]">
                   {study?.labels?.map((label) => {
                     return (
-                      <p className="rounded-full bg-white px-[1rem] py-[0.25rem] text-[10px] text-black md:text-xs">
+                      <p className="text-xxs rounded-full bg-white px-[1rem] py-[0.25rem] text-black">
                         {label}
                       </p>
                     );
                   })}
                 </div>
                 <div className="grid grid-cols-2">
-                  <p className="font-nunito text-lg font-[500] text-[#101C3A] md:text-[24px]">
+                  <p className="font-nunito text-lg font-medium text-[#101C3A] md:text-lg">
                     {study.title}
                   </p>
                   <div className="flex items-center justify-end">
@@ -420,7 +421,7 @@ const Testimonial = () => {
               <div
                 className={`rounded-2xl border border-transparent bg-white p-[2rem] transition-all duration-300 hover:border-8 hover:border-[#FFEFDA] ${''}`}
               >
-                <div className="font-nunito text-sm text-[#262626]">
+                <div className="font-nunito text-sm font-normal text-[#262626]">
                   {testimonial?.description}
                   <div className="flex justify-between pt-[2rem]">
                     <div>
@@ -484,7 +485,7 @@ const Contact = () => {
           <div className="flex-1 space-y-8 rounded-2xl p-[1rem] text-center shadow-[0_0_20px_rgba(66,71,76,0.08)] md:h-[650px] md:w-[620px] md:p-[3.25rem] md:text-left">
             <div className="flex justify-between">
               <div>
-                <p className="text:[2rem] text-left font-nunito font-[500] text-[#120A21] md:text-[32px]">
+                <p className="text:[2rem] text-left font-nunito font-medium text-[#120A21] md:text-xl">
                   Contact Us
                 </p>
                 <p className="text-left font-nunito text-[14px] font-normal text-[#666666] md:text-center md:text-xs">
@@ -647,7 +648,7 @@ const Services = () => {
                 <p
                   key={idx}
                   onClick={() => setActiveTab(idx)}
-                  className={`my-2 w-full cursor-pointer rounded-full border-4 px-6 py-3 text-xs md:my-6 md:w-[440px] md:text-md ${
+                  className={`my-2 w-full cursor-pointer rounded-full border-4 px-6 py-3 text-xs font-semibold md:my-6 md:w-[440px] md:text-md ${
                     activeTab === idx
                       ? 'border-[#EAF5FF] bg-[#1B5A96] text-white md:py-4'
                       : 'border-[#EAF5FF] bg-white text-black'
@@ -660,11 +661,11 @@ const Services = () => {
 
             {/* RIGHT SIDE - ACTIVE TAB CONTENT */}
             <div className="relative col-span-2 h-[42rem] rounded-3xl bg-[#EAF5FF] p-[1rem] md:pl-[8rem] md:pr-[2.5rem] md:pt-[4rem]">
-              <p className="mb-4 font-nunito text-2xl font-[600] text-black">
+              <p className="mb-4 font-nunito text-sm font-semibold text-black">
                 {services[activeTab].title}
               </p>
 
-              <p className="mb-6 font-nunito text-xs text-[#262626] md:text-sm">
+              <p className="mb-6 font-nunito text-xs font-normal text-[#262626] md:text-sm">
                 {services[activeTab].description}
               </p>
 
@@ -675,7 +676,7 @@ const Services = () => {
                       size={25}
                       className="rounded-full bg-[#1EAD0B] p-1 text-sm text-white"
                     />
-                    <span className="font-nunito text-xs font-[500] text-[#262626] md:text-md">
+                    <span className="font-nunito text-xs font-medium text-[#262626] md:text-sm">
                       {' '}
                       {item}
                     </span>
@@ -683,7 +684,7 @@ const Services = () => {
                 ))}
               </div>
               <div className="absolute bottom-0 right-[2.5rem] flex items-center justify-center">
-                <Image src={seo} width={482} height={327} alt="sf" />
+                <Image src={seo} width={472} height={317} alt="sf" />
               </div>
             </div>
           </div>
