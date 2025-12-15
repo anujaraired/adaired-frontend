@@ -84,7 +84,7 @@ const About = () => {
 
   return (
     <section className="">
-      <MaxWidthWrapper className="py-[8rem]">
+      <MaxWidthWrapper className="py-[2rem] md:py-[8rem]">
         <Heading
           subTitle={'ABOUT US'}
           title={'Every Brand Has A Story, '}
@@ -108,7 +108,7 @@ const About = () => {
                 alt="About Image"
                 height={87}
                 width={92}
-                className="absolute bottom-0 left-[44.25%]"
+                className="absolute bottom-[75.5%] left-[70%] md:bottom-0 md:left-[44.25%]"
               />
             </div>
           </div>
@@ -159,12 +159,12 @@ const Expect = () => {
 
   return (
     <section className="">
-      <MaxWidthWrapper className="py-[8rem]">
+      <MaxWidthWrapper className="py-[2rem] md:py-[8rem]">
         <Heading subTitle={subTitle} title={title} span="" description={''} />
 
-        <div className="relative flex justify-between gap-2 pt-5">
+        <div className="relative block justify-between gap-2 pt-5 md:flex">
           {/* Image Section */}
-          <div className="h-full w-[45%] overflow-hidden">
+          <div className="h-full w-[100%] overflow-hidden md:w-[45%]">
             <Image
               src={expectImg}
               alt="About Image"
@@ -178,7 +178,7 @@ const Expect = () => {
           <div className="flex-1 p-2 text-center md:text-left">
             <p className="font-nunito text-sm font-normal">{description}</p>
             {/* Points Section */}
-            <div className="grid grid-cols-2 gap-2 py-6 sm:flex-row">
+            <div className="grid grid-cols-1 gap-2 py-6 sm:flex-row md:grid-cols-2">
               {points.map((point, index) => (
                 <div
                   key={index}
@@ -327,7 +327,7 @@ const WhyChoose = () => {
                       width={144}
                       height={134}
                       alt="top curve"
-                      className={`absolute left-[80%] top-1 ${isSecond ? 'rotate-180' : ''} `}
+                      className={`absolute left-[80%] top-1 hidden md:block ${isSecond ? 'rotate-180' : ''} `}
                       priority
                     />
                   )}
@@ -347,7 +347,7 @@ const CaseStudy = () => {
 
   return (
     <section className="">
-      <MaxWidthWrapper className="py-[6rem]">
+      <MaxWidthWrapper className="py-[2rem] md:py-[6rem]">
         <Heading
           subTitle={subTitle}
           title={title}
@@ -366,14 +366,14 @@ const CaseStudy = () => {
                 <div className="flex gap-2 py-[1rem]">
                   {study?.labels?.map((label) => {
                     return (
-                      <p className="rounded-full bg-white px-[1rem] py-[0.25rem] text-xs text-black">
+                      <p className="rounded-full bg-white px-[1rem] py-[0.25rem] text-[10px] text-black md:text-xs">
                         {label}
                       </p>
                     );
                   })}
                 </div>
                 <div className="grid grid-cols-2">
-                  <p className="font-nunito text-[24px] font-[500] text-[#101C3A]">
+                  <p className="font-nunito text-lg font-[500] text-[#101C3A] md:text-[24px]">
                     {study.title}
                   </p>
                   <div className="flex items-center justify-end">
@@ -388,7 +388,7 @@ const CaseStudy = () => {
             );
           })}
         </div>
-        <div className="mt-[2rem] flex items-center justify-center">
+        <div className="flex items-center justify-center md:mt-[2rem]">
           <Button name="View All Studies" />
         </div>
       </MaxWidthWrapper>
@@ -411,7 +411,7 @@ const Testimonial = () => {
             isStyped={true}
             isVarticle={true}
             isBgWhite={true}
-            className="w-[50%]"
+            className="w-[90%] md:w-[50%]"
           />
         </div>
         <div className="grid grid-cols-1 gap-5 px-[3%] pt-[2.5rem] md:grid-cols-3">
@@ -636,19 +636,20 @@ const Services = () => {
             span={''}
             description={description}
             isStyped={true}
+            isVarticle={true}
           />
 
           {/* Main layout */}
-          <div className="z-20 mt-[2.5rem] flex rounded-3xl bg-white">
+          <div className="z-20 mt-[2.5rem] block rounded-3xl md:flex md:bg-white">
             {/* LEFT SIDE - TABS */}
-            <div className="z-20 w-[32%] px-[4rem] py-[2.5rem]">
+            <div className="z-20 w-[100%] md:w-[32%] md:px-[4rem] md:py-[2.5rem]">
               {services?.map((service, idx) => (
                 <p
                   key={idx}
                   onClick={() => setActiveTab(idx)}
-                  className={`my-6 w-[440px] cursor-pointer rounded-full border-4 px-6 py-3 text-md ${
+                  className={`my-2 w-full cursor-pointer rounded-full border-4 px-6 py-3 text-xs md:my-6 md:w-[440px] md:text-md ${
                     activeTab === idx
-                      ? 'border-[#EAF5FF] bg-[#1B5A96] py-4 text-white'
+                      ? 'border-[#EAF5FF] bg-[#1B5A96] text-white md:py-4'
                       : 'border-[#EAF5FF] bg-white text-black'
                   } `}
                 >
@@ -658,12 +659,12 @@ const Services = () => {
             </div>
 
             {/* RIGHT SIDE - ACTIVE TAB CONTENT */}
-            <div className="relative col-span-2 rounded-3xl bg-[#EAF5FF] pl-[8rem] pr-[2.5rem] pt-[4rem]">
+            <div className="relative col-span-2 h-[42rem] rounded-3xl bg-[#EAF5FF] p-[1rem] md:pl-[8rem] md:pr-[2.5rem] md:pt-[4rem]">
               <p className="mb-4 font-nunito text-2xl font-[600] text-black">
                 {services[activeTab].title}
               </p>
 
-              <p className="mb-6 font-nunito text-sm text-[#262626]">
+              <p className="mb-6 font-nunito text-xs text-[#262626] md:text-sm">
                 {services[activeTab].description}
               </p>
 
@@ -674,7 +675,7 @@ const Services = () => {
                       size={25}
                       className="rounded-full bg-[#1EAD0B] p-1 text-sm text-white"
                     />
-                    <span className="font-nunito font-[500] text-[#262626]">
+                    <span className="font-nunito text-xs font-[500] text-[#262626] md:text-md">
                       {' '}
                       {item}
                     </span>

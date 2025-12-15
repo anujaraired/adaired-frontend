@@ -43,9 +43,9 @@ const Heading = ({
 
           {isVarticle ? (
             <div
-              className={`md:px-[15%] text-center ${isBgWhite ? 'text-black' : 'text-white'} `}
+              className={`text-center md:px-[15%] ${isBgWhite ? 'text-black' : 'text-white'} `}
             >
-              <p className="pt- md:pt-4 font-nunito text-[1.6rem] md:text-lg2 font-medium">
+              <p className="pt- font-nunito text-[1.6rem] font-medium md:pt-4 md:text-lg2">
                 {title} <br />
                 {span}
               </p>
@@ -62,7 +62,7 @@ const Heading = ({
               <div
                 className={`col-span-2 w-[60%] leading-[60px] ${isBgWhite ? 'text-black' : 'text-white'} `}
               >
-                <p className="pt- md:pt-4 font-nunito text-[1.6rem] md:text-lg2 font-medium">
+                <p className="pt- font-nunito text-[1.6rem] font-medium md:pt-4 md:text-lg2">
                   {title} <br />
                   {span}
                 </p>
@@ -75,26 +75,30 @@ const Heading = ({
         </div>
       ) : (
         <div>
-          <div className="flex w-fit gap-3">
-            <Image
-              src={star}
-              width={18}
-              height={17}
-              alt=""
-              className="mb-auto mt-1"
-            />
-            <p> {subTitle}</p>
-            <div className="mb-auto mt-3 h-0.5 w-24 bg-[#D7EBFF]"></div>
-            <div className="mt-[-20px] leading-[60px]">
-              <p className="font-nunito text-lg2 font-medium text-black">
+          <div className="block w-fit gap-3 md:flex">
+            <div className="flex gap-3">
+              <Image
+                src={star}
+                width={18}
+                height={17}
+                alt=""
+                className="mb-auto mt-1"
+              />
+              <p className="text-[14px] md:text-xs"> {subTitle}</p>
+              <div className="mb-auto mt-3 h-0.5 w-24 bg-[#D7EBFF]"></div>
+            </div>
+            <div className="mt-[10px] md:mt-[-20px]">
+              <p className="font-nunito text-2xl font-medium leading-tight text-black md:text-lg2">
                 {title} <br></br>
                 {span}
               </p>
             </div>
           </div>
-          <p className="hyphens-auto py-3 text-justify font-nunito text-base sm:text-lg">
-            {description}
-          </p>
+          <div>
+            <p className="hyphens-auto py-3 text-justify font-nunito text-base sm:text-lg">
+              {description}
+            </p>
+          </div>
         </div>
       )}
     </div>

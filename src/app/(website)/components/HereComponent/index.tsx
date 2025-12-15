@@ -34,7 +34,7 @@ const HereComponent = () => {
         priority
       />
 
-      <MaxWidthWrapper className="py-[8rem]">
+      <MaxWidthWrapper className="py-[2rem] md:py-[8rem]">
         <Image
           src={bgGrid}
           fill
@@ -44,18 +44,22 @@ const HereComponent = () => {
           className="object-cover"
           priority
         />
-        <Image src={headerImage} width={1220} height={240} alt="32" />
-        <div className="mt-20 flex gap-2 font-nunito text-xs text-black">
+        <Image
+          src={headerImage}
+          width={1220}
+          height={240}
+          alt="32"
+          className="hidden md:block"
+        />
+        <div className="mt-4 flex gap-2 font-nunito text-xs text-black md:mt-20">
           <Image src={star} width={18} height={17} alt="d" />
-          <span>WELCOME TO ADAIRED</span>
+          <span className="text-[14px] md:text-xs">WELCOME TO ADAIRED</span>
         </div>
         <div className="gap- grid grid-cols-1 md:grid-cols-2">
-          <div className="relative flex">
-            <div>
-              <p className="md:text-lg2 mt-4 text-lg font-medium leading-tight text-black">
-                Digital Agency That
-                <br></br> <span className="flex gap-2">Turns Businesses </span>
-                Into Brands{' '}
+          <div className="relative flex justify-between">
+            <div className="w-[80%] md:w-[65%]">
+              <p className="mt-4 text-3xl font-bold text-black md:text-lg md:text-lg2 md:font-medium md:leading-tight">
+                Digital Agency That Turns Businesses Into Brands
               </p>
             </div>
             <Image
@@ -63,18 +67,22 @@ const HereComponent = () => {
               width={128}
               height={100}
               alt="32"
-              className="absolute right-1/4 top-1/3 mr-5 mt-1"
+              className="absolute right-0 top-0 mt-1 md:right-1/4 md:top-1/3 md:mr-5"
             />
           </div>
-          <div className="">
-            <p className="text-xs text-black">
+          <div className="pt-4 md:pt-0">
+            <p className="text-[14px] text-black md:text-xs">
               We’re a digital agency that transforms businesses into brands.
               With the perfect blend of strategy and creativity, we help you
               stand out, connect with your audience, and grow with impact.
             </p>
             <div className="flex gap-2 py-4">
-              <p className="text-xs text-black">🚀 Transform Your Business</p>
-              <p className="text-xs text-black">🎯 Engage & Grow</p>
+              <p className="text-[12px] text-black md:text-xs">
+                🚀 Transform Your Business
+              </p>
+              <p className="text-[10px] text-black md:text-xs">
+                🎯 Engage & Grow
+              </p>
             </div>
             <Button name="Book A Demo" className="mt-3" />
           </div>
