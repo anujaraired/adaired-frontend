@@ -50,7 +50,7 @@ const Heading = ({
                 {span}
               </p>
               <p
-                className={`py-3 font-nunito font-normal text-xs md:text-sm ${isBgWhite ? 'text-black' : 'text-white'} `}
+                className={`py-3 font-nunito text-xs font-normal md:text-sm ${isBgWhite ? 'text-black' : 'text-white'} `}
               >
                 {description}
               </p>

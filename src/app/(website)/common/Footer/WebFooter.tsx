@@ -86,7 +86,7 @@ const WebFooter = () => {
             </div>
 
             <div className="col-span-12 md:col-span-3 lg:col-span-2">
-              <h3 className="relative font-nunito text-md font-semibold tracking-wide text-white after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-16 after:bg-[#FB9100] after:content-[''] lg:text-2xl">
+              <h3 className="relative font-nunito text-md font-semibold tracking-wide text-white after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-16 after:bg-[#FB9100] after:content-[''] lg:text-md">
                 Useful Links
               </h3>
               <ul
@@ -131,7 +131,7 @@ const WebFooter = () => {
             </div>
 
             <div className="col-span-12 md:col-span-5 lg:col-span-3">
-              <h3 className="relative font-nunito text-md font-semibold tracking-wide text-white after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-16 after:bg-[#FB9100] after:content-[''] lg:text-2xl">
+              <h3 className="relative font-nunito text-md font-semibold tracking-wide text-white after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-16 after:bg-[#FB9100] after:content-[''] lg:text-md">
                 Services
               </h3>
               <ul
@@ -182,7 +182,7 @@ const WebFooter = () => {
             </div>
 
             <div className="col-span-12 md:col-span-4 lg:col-span-3">
-              <h3 className="relative font-nunito text-md font-semibold tracking-wide text-white after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-16 after:bg-[#FB9100] after:content-[''] lg:text-2xl">
+              <h3 className="relative font-nunito text-md font-semibold tracking-wide text-white after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-16 after:bg-[#FB9100] after:content-[''] lg:text-md">
                 Subscribe
               </h3>
               <p className="mt-6 text-xs font-nunito">
@@ -192,7 +192,7 @@ const WebFooter = () => {
               <NewsLetter />
             </div>
             <div className="col-span-12 mt-6 lg:hidden">
-              <h3 className="font-nunito text-lg font-semibold tracking-wide text-white lg:text-2xl">
+              <h3 className="font-nunito text-lg font-semibold tracking-wide text-white lg:text-md">
                 Follow Us
               </h3>
               <div className="mt-4 flex gap-2">

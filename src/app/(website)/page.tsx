@@ -637,7 +637,7 @@ const Services = () => {
             span={''}
             description={description}
             isStyped={true}
-            isVarticle={true}
+            // isVarticle={true}
           />
 
           {/* Main layout */}
@@ -648,10 +648,10 @@ const Services = () => {
                 <p
                   key={idx}
                   onClick={() => setActiveTab(idx)}
-                  className={`my-2 w-full cursor-pointer rounded-full border-4 px-6 py-3 text-xs font-semibold md:my-6 md:w-[440px] md:text-md ${
+                  className={`my-2 w-full cursor-pointer rounded-full border-4 px-[41px] py-[18px] text-xs md:my-6 md:w-[440px] md:text-md ${
                     activeTab === idx
-                      ? 'border-[#EAF5FF] bg-[#1B5A96] text-white md:py-4'
-                      : 'border-[#EAF5FF] bg-white text-black'
+                      ? 'border-[#EAF5FF] bg-[#1B5A96] font-semibold text-white md:py-[20px]'
+                      : 'border-[#EAF5FF] bg-white font-normal text-black'
                   } `}
                 >
                   {service.title}
@@ -671,13 +671,12 @@ const Services = () => {
 
               <div className="ml-6 list-disc space-y-2">
                 {services[activeTab].list?.map((item, i) => (
-                  <div key={i} className="flex gap-2 text-black">
+                  <div key={i} className="flex gap-2 py-1 text-black">
                     <IoCheckmark
                       size={25}
                       className="rounded-full bg-[#1EAD0B] p-1 text-sm text-white"
                     />
                     <span className="font-nunito text-xs font-medium text-[#262626] md:text-sm">
-                      {' '}
                       {item}
                     </span>
                   </div>

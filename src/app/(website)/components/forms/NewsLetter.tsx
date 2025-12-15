@@ -7,7 +7,7 @@ import { useReCaptcha } from 'next-recaptcha-v3';
 import toast from 'react-hot-toast';
 import { Button } from 'rizzui';
 import { TbArrowRightDashed } from 'react-icons/tb';
-import icon from '../../../../../public/assets/icons/share.png'
+import icon from '../../../../../public/assets/icons/share.png';
 import Image from 'next/image';
 const schema = z.object({
   gRecaptchaToken: z.string(),
@@ -60,10 +60,16 @@ const NewsLetter = () => {
         variant="flat"
         placeholder="Enter your email"
         {...register('email')}
-        inputClassName="!focus:bg-white !focus:border-0 !border-0 !ring-0 !bg-white relative h-12 w-full rounded-full px-4 p-2 text-black outline-none md:w-full"
+        inputClassName="text-xs px-[1rem] py-[1.5rem]  !focus:bg-white !focus:border-0 !border-0 !ring-0 !bg-white relative w-full rounded-full text-black outline-none md:w-full"
         error={errors.email?.message}
       />
-      <Image src={icon} width={40} height={40} alt='"' className='absolute top-1 right-1   rounded-full bg-[#FB9100] p-2' />
+      <Image
+        src={icon}
+        width={40}
+        height={40}
+        alt='"'
+        className="absolute right-2 top-1 rounded-full bg-[#FB9100] p-2"
+      />
 
       {/* <Button
         type="submit"
