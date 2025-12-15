@@ -24,7 +24,7 @@ const Heading = ({
   return (
     <div className={className}>
       {isStyped ? (
-        <div>
+        <div className="">
           <div
             className={`flex w-fit items-center gap-3 ${isBgWhite ? 'text-black' : 'text-white'} ${
               isVarticle ? 'mx-auto' : ''
@@ -37,21 +37,21 @@ const Heading = ({
               alt=""
               className="mb-auto mt-1"
             />
-            <p className="text-xxs font-nunito md:text-xs">{subTitle}</p>
+            <span className={`${isBgWhite ? 'text-black' : 'text-white'}`}>
+              {subTitle}
+            </span>
             <div className="my-auto h-0.5 w-24 bg-[#D7EBFF]"></div>
           </div>
 
           {isVarticle ? (
-            <div
-              className={`text-center md:px-[15%] ${isBgWhite ? 'text-black' : 'text-white'} `}
-            >
-              <p className="pt- font-nunito text-[1.6rem] font-medium md:pt-4 md:text-3xl">
+            <div className={`$ text-center md:px-[15%]`}>
+              <h2
+                className={`md:pt-4 ${isBgWhite ? 'text-black' : 'text-white'}`}
+              >
                 {title} <br />
                 {span}
-              </p>
-              <p
-                className={`py-3 font-nunito text-xs font-normal md:text-sm ${isBgWhite ? 'text-black' : 'text-white'} `}
-              >
+              </h2>
+              <p className={`py-3 ${isBgWhite ? 'text-black' : 'text-white'} `}>
                 {description}
               </p>
             </div>
@@ -62,14 +62,12 @@ const Heading = ({
               <div
                 className={`col-span-2 w-[60%] leading-[60px] ${isBgWhite ? 'text-black' : 'text-white'} `}
               >
-                <p className="pt- font-nunito text-[1.6rem] font-medium md:pt-4 md:text-3xl">
+                <h2 className="text-white md:pt-4">
                   {title} <br />
                   {span}
-                </p>
+                </h2>
               </div>
-              <p className="py-3 font-nunito text-sm text-white">
-                {description}
-              </p>
+              <p className="py-3 text-sm text-white">{description}</p>
             </div>
           )}
         </div>
@@ -84,14 +82,17 @@ const Heading = ({
                 alt=""
                 className="mb-auto mt-1"
               />
-              <p className="text-xxs font-nunito md:text-xs"> {subTitle}</p>
+              <span className="text-xxs font-nunito md:text-xs">
+                {' '}
+                {subTitle}
+              </span>
               <div className="mb-auto mt-3 h-0.5 w-24 bg-[#D7EBFF]"></div>
             </div>
             <div className="mt-[10px] md:mt-[-20px]">
-              <p className="font-nunito text-lg font-medium leading-tight text-black md:text-3xl">
+              <h2 className="leading-tight">
                 {title} <br></br>
                 {span}
-              </p>
+              </h2>
             </div>
           </div>
           <div>

@@ -53,25 +53,25 @@ const HereComponent = () => {
         />
         <div className="mt-4 flex gap-2 font-nunito text-xs text-black md:mt-20">
           <Image src={star} width={18} height={17} alt="d" />
-          <span className="text-[14px] md:text-xs">WELCOME TO ADAIRED</span>
+          <span className="">WELCOME TO ADAIRED</span>
         </div>
         <div className="gap- grid grid-cols-1 md:grid-cols-2">
           <div className="relative flex justify-between">
-            <div className="w-[80%] md:w-[65%]">
-              <p className="mt-4 text-[26px] font-bold text-black md:text-3xl md:font-medium md:leading-tight">
+            <div className="w-[80%] md:w-[70%]">
+              <h1 className="mt-4">
                 Digital Agency That Turns Businesses Into Brands
-              </p>
+              </h1>
             </div>
             <Image
               src={cartoonMegaphones}
               width={128}
               height={100}
               alt="32"
-              className="absolute right-0 top-5 mt-1 md:right-1/4 md:top-1/3 md:mr-5"
+              className="absolute right-0 top-5 mt-1 md:right-1/4 md:top-1/5 md:mr-1"
             />
           </div>
           <div className="pt-4 md:pt-0">
-            <p className="font-nunito text-xs font-normal text-black md:text-sm">
+            <p className="">
               We’re a digital agency that transforms businesses into brands.
               With the perfect blend of strategy and creativity, we help you
               stand out, connect with your audience, and grow with impact.and

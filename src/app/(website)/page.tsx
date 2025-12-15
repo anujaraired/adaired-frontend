@@ -124,13 +124,9 @@ const About = () => {
                   <div>
                     <div className="relative py-2 font-nunito text-2xl font-semibold">
                       <div className="absolute bottom-1 left-1/2 h-0.5 w-14 -translate-x-1/2 rounded-lg text-black md:left-0 md:translate-x-0"></div>
-                      <p className="font-nunito text-sm font-semibold text-black">
-                        {point.title}
-                      </p>
+                      <h4 className="">{point.title}</h4>
                     </div>
-                    <p className="font-nunito text-xs font-normal text-[#262626] md:text-sm">
-                      {point.description}
-                    </p>
+                    <p className="">{point.description}</p>
                   </div>
                 </div>
               ))}
@@ -175,9 +171,7 @@ const Expect = () => {
 
           {/* Content Section */}
           <div className="flex-1 p-2 text-center md:text-left">
-            <p className="font-nunito text-xs font-normal md:text-sm">
-              {description}
-            </p>
+            <p className="">{description}</p>
             {/* Points Section */}
             <div className="grid grid-cols-1 gap-2 py-6 sm:flex-row md:grid-cols-2">
               {points.map((point, index) => (
@@ -192,13 +186,13 @@ const Expect = () => {
                     alt="queen"
                     className="mb-auto"
                   />
-                  <p className="my-auto font-nunito text-[13px] font-medium text-[#000000] md:text-sm">
+                  <p className="my-auto text-[13px] font-medium text-[#000000] md:text-sm">
                     {point.title}
                   </p>
                 </div>
               ))}
             </div>
-            <p className="font-nunito text-sm font-normal">{para2}</p>
+            <p className="">{para2}</p>
           </div>
         </div>
         <div className="grid grid-cols-1 gap-2 md:grid-cols-4">
@@ -213,9 +207,7 @@ const Expect = () => {
                 <p className="text-center font-nunito text-xl font-semibold text-[#101C3A] md:text-[36px]">
                   {record.number}+
                 </p>
-                <p className="text-center font-nunito text-xs text-[#656565] md:text-sm">
-                  {record.name}
-                </p>
+                <p className="text-center text-[#656565]">{record.name}</p>
               </div>
             );
           })}
@@ -307,15 +299,17 @@ const WhyChoose = () => {
 
                     {/* CARD */}
                     <div
-                      className={`mt-[-2.5rem] h-[340px] w-[296px] cursor-pointer rounded-3xl px-[1.5rem] pb-[1.5rem] pt-[3rem] transition-all duration-300 ${hovered ? 'bg-white text-black' : 'bg-[#1A5A9621] text-white'} `}
+                      className={`mt-[-2.5rem] h-[390px] w-[296px] cursor-pointer rounded-3xl px-[1.5rem] pb-[1.5rem] pt-[3rem] transition-all duration-300 ${hovered ? 'bg-white text-black' : 'bg-[#1A5A9621] text-white'} `}
                     >
                       <p
-                        className={`font-nunito text-lg ${hovered ? 'font-semibold' : 'font-normal'}`}
+                        className={`text-lg ${hovered ? 'font-semibold text-black' : 'font-normal text-white'} `}
                       >
                         {item?.title}
                       </p>
 
-                      <p className={`pt-[1rem] font-nunito text-xs`}>
+                      <p
+                        className={`pt-[1rem] ${hovered ? 'text-[#666666]' : 'text-white'} `}
+                      >
                         {item?.description}
                       </p>
                     </div>
@@ -367,16 +361,14 @@ const CaseStudy = () => {
                 <div className="flex gap-2 py-[1rem]">
                   {study?.labels?.map((label) => {
                     return (
-                      <p className="text-xxs rounded-full bg-white px-[1rem] py-[0.25rem] text-black">
+                      <span className="rounded-full bg-white px-[1rem] py-[0.25rem]">
                         {label}
-                      </p>
+                      </span>
                     );
                   })}
                 </div>
                 <div className="grid grid-cols-2">
-                  <p className="font-nunito text-lg font-medium text-[#101C3A] md:text-lg">
-                    {study.title}
-                  </p>
+                  <h3 className="">{study.title}</h3>
                   <div className="flex items-center justify-end">
                     <IoIosArrowRoundForward
                       size={40}
@@ -645,29 +637,25 @@ const Services = () => {
             {/* LEFT SIDE - TABS */}
             <div className="z-20 w-[100%] md:w-[32%] md:px-[4rem] md:py-[2.5rem]">
               {services?.map((service, idx) => (
-                <p
+                <h5
                   key={idx}
                   onClick={() => setActiveTab(idx)}
-                  className={`my-2 w-full cursor-pointer rounded-full border-4 px-[41px] py-[18px] text-xs md:my-6 md:w-[440px] md:text-md ${
+                  className={`my-2 w-full cursor-pointer rounded-full border-4 px-[41px] py-[18px] md:my-6 md:w-[440px] ${
                     activeTab === idx
                       ? 'border-[#EAF5FF] bg-[#1B5A96] font-semibold text-white md:py-[20px]'
                       : 'border-[#EAF5FF] bg-white font-normal text-black'
                   } `}
                 >
                   {service.title}
-                </p>
+                </h5>
               ))}
             </div>
 
             {/* RIGHT SIDE - ACTIVE TAB CONTENT */}
             <div className="relative col-span-2 h-[42rem] rounded-3xl bg-[#EAF5FF] p-[1rem] md:pl-[8rem] md:pr-[2.5rem] md:pt-[4rem]">
-              <p className="mb-4 font-nunito text-sm font-semibold text-black">
-                {services[activeTab].title}
-              </p>
+              <h4 className="mb-4">{services[activeTab].title}</h4>
 
-              <p className="mb-6 font-nunito text-xs font-normal text-[#262626] md:text-sm">
-                {services[activeTab].description}
-              </p>
+              <p className="mb-6">{services[activeTab].description}</p>
 
               <div className="ml-6 list-disc space-y-2">
                 {services[activeTab].list?.map((item, i) => (
@@ -676,9 +664,7 @@ const Services = () => {
                       size={25}
                       className="rounded-full bg-[#1EAD0B] p-1 text-sm text-white"
                     />
-                    <span className="font-nunito text-xs font-medium text-[#262626] md:text-sm">
-                      {item}
-                    </span>
+                    <p className="font-medium">{item}</p>
                   </div>
                 ))}
               </div>
