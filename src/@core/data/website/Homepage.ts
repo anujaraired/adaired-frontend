@@ -241,7 +241,7 @@ export const LogoSliderSectionData = {
 
 export const ServiceSectionData = {
   subtitle: 'OUR SERVICES',
-  title: 'Transforming Businesses into Iconic Brands',
+  title: 'How We Help Your Brand Grow',
   description:
     "Adaired Digital Media believes that every solution should elevate your brand, connect with your target audience, and generate measurable growth. Here's how we accomplish it:",
   services: [
@@ -343,6 +343,7 @@ export const ServiceSectionData = {
       mainSvg: 'Content Marketing_iPYl2',
       hoverSvg: '/assets/images/content-marketing-hover.svg',
       accentColor: '#24a486',
+      lastPara: 'What You Can Expect',
     },
   ],
 };

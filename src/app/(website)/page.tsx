@@ -137,7 +137,7 @@ const About = () => {
             </div>
 
             <Button
-              name={'Read More'}
+              name={'See What’s Next'}
               type="button"
               navigateTo={btnHref}
               className="mt-9"
@@ -450,6 +450,24 @@ const Testimonial = () => {
 
 const Contact = () => {
   const { image, subTitle, title, description } = ContactSectionData;
+  const [inputValue, setInputValue] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: '',
+  });
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setInputValue((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
   return (
     <section className="">
@@ -478,10 +496,10 @@ const Contact = () => {
             <div className="flex justify-between">
               <div>
                 <p className="text:[2rem] text-left font-nunito font-medium text-[#120A21] md:text-xl">
-                  Contact Us
+                  Let’s Talk
                 </p>
                 <p className="text-left font-nunito text-[14px] font-normal text-[#666666] md:text-center md:text-xs">
-                  Lorem ipsum dolor sit amet, consectetur elit
+                  Reach out and let’s start the conversation:
                 </p>
               </div>
               <Image src={chat} width={111} height={73} alt="chat" />
@@ -489,32 +507,32 @@ const Contact = () => {
             <div>
               <InputField
                 className="my-2"
-                name=""
-                value=""
-                handleChange={() => console.log('d')}
+                name="name"
+                value={inputValue.name}
+                handleChange={handleChange}
                 placeholder="Name"
               />
               <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                 <InputField
                   className="mt-2 md:my-2"
-                  name=""
-                  value=""
-                  handleChange={() => console.log('d')}
+                  name="email"
+                  value={inputValue.email}
+                  handleChange={handleChange}
                   placeholder="Email"
                 />
                 <InputField
                   className="mb-2 md:my-2"
-                  name=""
-                  value=""
-                  handleChange={() => console.log('d')}
+                  name="phone"
+                  value={inputValue.phone}
+                  handleChange={handleChange}
                   placeholder="Phone No"
                 />
               </div>
               <SelectField
                 className="my-2"
-                name=""
-                value=""
-                handleChange={() => console.log('d')}
+                name="service"
+                value={inputValue.service}
+                handleChange={handleChange}
                 placeholder="Service"
                 options={[
                   { label: 'Service 1', value: 'service1' },
@@ -522,13 +540,9 @@ const Contact = () => {
                 ]}
               />
               <MessageField
-                name={''}
-                value={''}
-                handleChange={function (
-                  e: React.ChangeEvent<HTMLTextAreaElement>
-                ): void {
-                  throw new Error('Function not implemented.');
-                }}
+                name={'message'}
+                value={inputValue.message}
+                handleChange={handleChange}
                 placeholder="Message"
                 className="my-2"
               />
@@ -671,6 +685,7 @@ const Services = () => {
               <div className="absolute bottom-0 right-[2.5rem] flex items-center justify-center">
                 <Image src={seo} width={472} height={317} alt="sf" />
               </div>
+              <p className="mt-6">{services[activeTab].lastPara}</p>
             </div>
           </div>
         </MaxWidthWrapper>

@@ -246,7 +246,7 @@ export const routes = {
       ],
     },
     {
-      label: 'Contact',
+      label: 'Contact Us',
       value: 'contact' as const,
       href: '/contact',
     },

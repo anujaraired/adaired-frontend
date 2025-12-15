@@ -46,8 +46,8 @@ const FooterTop = () => {
                         className={`${item?.name === "Find Us" && "col-span-1 md:col-span-2"} flex gap-3 cursor-pointer py-2`}>
                         <Image src={item?.icon} width={50} height={45} alt='icon' className='mb-auto' />
                         <div>
-                            <p className='text-[18px]'>{item?.name}</p>
-                            <p className='text-[20px] font-[600] leading-7 pt-1'>{item?.description}</p>
+                            <p className='text-[18px] text-white'>{item?.name}</p>
+                            <p className='text-[20px] font-[600] leading-7 pt-1 text-white'>{item?.description}</p>
                         </div>
                     </Link>
                 )

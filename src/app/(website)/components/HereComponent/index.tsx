@@ -59,7 +59,7 @@ const HereComponent = () => {
           <div className="relative flex justify-between">
             <div className="w-[80%] md:w-[70%]">
               <h1 className="mt-4">
-                Digital Agency That Turns Businesses Into Brands
+                The Driving Force Behind the Brands That Lead
               </h1>
             </div>
             <Image
@@ -67,15 +67,16 @@ const HereComponent = () => {
               width={128}
               height={100}
               alt="32"
-              className="absolute right-0 top-5 mt-1 md:right-1/4 md:top-1/5 md:mr-1"
+              className="md:top-1/5 absolute right-[20%] top-[10%]"
             />
           </div>
           <div className="pt-4 md:pt-0">
             <p className="">
-              We’re a digital agency that transforms businesses into brands.
-              With the perfect blend of strategy and creativity, we help you
-              stand out, connect with your audience, and grow with impact.and
-              grow with impact.and grow with impact.
+              In a world where thousands of brands compete for a moment's
+              attention, being seen isn’t enough. You want to be remembered,
+              right? And that’s where Adaired Digital Media comes in. Offering a
+              full-service, 360° digital strategy for your business, helping you
+              rise above the noise and claim your space in the digital world.
             </p>
             <div className="flex gap-2 py-4">
               <p className="text-xxs text-black md:text-sm">
@@ -83,7 +84,7 @@ const HereComponent = () => {
               </p>
               <p className="text-xxs text-black md:text-sm">🎯 Engage & Grow</p>
             </div>
-            <Button name="Book A Demo" className="mt-3" />
+            <Button name="Start Your Journey!" className="mt-3" />
           </div>
         </div>
       </MaxWidthWrapper>

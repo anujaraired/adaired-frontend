@@ -6,7 +6,7 @@ import { Separator } from '@core/ui/shadcn-ui/separator';
 import { cn } from '@core/utils/class-names';
 import NewsLetter from '@web-components/forms/NewsLetter';
 import FooterTop from './FooterTop';
-import footer_brand_logo from '../../../../../public/assets/brand_logo.png'
+import footer_brand_logo from '../../../../../public/assets/brand_logo.png';
 import CldImage from '../../components/CloudinaryImageComponent';
 // import dynamic from "next/dynamic";
 
@@ -17,7 +17,7 @@ import CldImage from '../../components/CloudinaryImageComponent';
 const WebFooter = () => {
   return (
     <>
-      <footer className="bg-footer-gradient font-nunito text-white py-12">
+      <footer className="bg-footer-gradient py-12 font-nunito text-white">
         <MaxWidthWrapper className="px-4">
           <div
             className={cn(
@@ -38,7 +38,7 @@ const WebFooter = () => {
                   priority
                 />
               </Link>
-              <p className="mt-6 text-xs font-nunito">
+              <p className="mt-6 text-white">
                 AdAired Digital Media is a digital marketing company located in
                 Mohali. We are a team of marketing and design experts who are
                 committed to your online growth.{' '}
@@ -49,7 +49,7 @@ const WebFooter = () => {
                     href={process.env.NEXT_PUBLIC_FACEBOOK_URL || '/'}
                     className="group/fb rounded-full bg-white p-2 hover:bg-theme-orange"
                   >
-                    <Icons.Facebook className="text-[#1B5A96] group-hover/fb:text-white " />
+                    <Icons.Facebook className="text-[#1B5A96] group-hover/fb:text-white" />
                     <span className="sr-only">
                       Visit Adaired Digital &apos; s Facebook page
                     </span>
@@ -91,7 +91,7 @@ const WebFooter = () => {
               </h3>
               <ul
                 className={cn(
-                  `mt-6 text-xs font-nunito space-y-2 transition-colors duration-200 hover:[&>li]:text-theme-orange`
+                  `mt-6 space-y-2 font-nunito text-xs transition-colors duration-200 hover:[&>li]:text-theme-orange`
                 )}
               >
                 <li>
@@ -115,16 +115,13 @@ const WebFooter = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/career"
-                    className=""
-                  >
+                  <Link href="/career" className="">
                     Career
                   </Link>
                 </li>
                 <li>
                   <Link href="/contact" className="">
-                    Contact
+                    Contact Us
                   </Link>
                 </li>
               </ul>
@@ -136,7 +133,7 @@ const WebFooter = () => {
               </h3>
               <ul
                 className={cn(
-                  `mt-6 space-y-2 text-xs font-nunito transition-colors duration-200 hover:[&>li]:text-theme-orange`
+                  `mt-6 space-y-2 font-nunito text-xs transition-colors duration-200 hover:[&>li]:text-theme-orange`
                 )}
               >
                 <li>
@@ -148,7 +145,10 @@ const WebFooter = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/search-engine-optimization" className="">
+                  <Link
+                    href="/services/search-engine-optimization"
+                    className=""
+                  >
                     Search Engine Optimization (SEO)
                   </Link>
                 </li>
@@ -174,7 +174,10 @@ const WebFooter = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/web-development-company-usa" className="">
+                  <Link
+                    href="/services/web-development-company-usa"
+                    className=""
+                  >
                     Web Development Company USA
                   </Link>
                 </li>
@@ -185,7 +188,7 @@ const WebFooter = () => {
               <h3 className="relative font-nunito text-md font-semibold tracking-wide text-white after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-16 after:bg-[#FB9100] after:content-[''] lg:text-md">
                 Subscribe
               </h3>
-              <p className="mt-6 text-xs font-nunito">
+              <p className="mt-6 font-nunito text-xs text-white">
                 Share your email address to subscribe to Adaired&apos;s
                 newsletter.
               </p>
@@ -251,11 +254,11 @@ const WebFooter = () => {
         </MaxWidthWrapper>
       </footer>
       <MaxWidthWrapper>
-        <div className="bg-white text-black flex flex-col-reverse items-center justify-center py- text-center md:flex-row md:justify-between">
-          <div className='text-xs font-nunito'>
+        <div className="py- flex flex-col-reverse items-center justify-center bg-white text-center text-black md:flex-row md:justify-between">
+          <div className="font-nunito text-xs">
             Copyright © {new Date().getFullYear()} - AdAired Digital Media
           </div>
-          <div className="text-xs font-nunito flex gap-5 py-2 sm:gap-1 sm:bg-transparent">
+          <div className="flex gap-5 py-2 font-nunito text-xs sm:gap-1 sm:bg-transparent">
             <Link href="/terms-and-conditions">Terms & Conditions </Link>
             <span className="hidden sm:block">/</span>
             <div className="sm:hidden">

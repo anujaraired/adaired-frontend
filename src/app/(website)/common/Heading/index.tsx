@@ -59,10 +59,10 @@ const Heading = ({
             <div
               className={`grid ${isBgWhite ? 'grid-cols-1' : 'grid-cols-3'} gap-5`}
             >
-              <div
-                className={`col-span-2 w-[60%] leading-[60px] ${isBgWhite ? 'text-black' : 'text-white'} `}
-              >
-                <h2 className="text-white md:pt-4">
+              <div className={`col-span-2 w-[60%] leading-[60px]`}>
+                <h2
+                  className={`md:pt-4 ${isBgWhite ? 'text-black' : 'text-white'} `}
+                >
                   {title} <br />
                   {span}
                 </h2>
