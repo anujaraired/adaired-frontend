@@ -57,7 +57,7 @@ const Heading = ({
             </div>
           ) : (
             <div
-              className={`block md:grid ${isBgWhite ? 'grid-cols-1' : 'grid-cols-3'} gap-5`}
+              className={`block lg:grid ${isBgWhite ? 'grid-cols-1' : 'grid-cols-3'} gap-5`}
             >
               <div className={`col-span-2 w-full md:w-[60%] md:leading-[60px]`}>
                 <h2
@@ -82,7 +82,7 @@ const Heading = ({
                 alt=""
                 className="mb-auto mt-1"
               />
-              <span className="text-xxs font-nunito md:text-xs">
+              <span className="font-nunito text-xxs md:text-xs">
                 {' '}
                 {subTitle}
               </span>

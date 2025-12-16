@@ -35,7 +35,7 @@ const data = [
 ]
 const FooterTop = () => {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-4'>
+        <div className='grid grid-cols-1 lg:grid-cols-4'>
             {data?.map((item: IFooterTop, idx) => {
                 return (
                     <Link
@@ -43,7 +43,7 @@ const FooterTop = () => {
                         href={item?.path}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`${item?.name === "Find Us" && "col-span-1 md:col-span-2"} flex gap-3 cursor-pointer py-2`}>
+                        className={`${item?.name === "Find Us" && "col-span-1 lg:col-span-2"} flex gap-3 cursor-pointer py-2`}>
                         <Image src={item?.icon} width={50} height={45} alt='icon' className='mb-auto' />
                         <div>
                             <p className='text-[18px] text-white'>{item?.name}</p>

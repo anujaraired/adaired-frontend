@@ -81,12 +81,6 @@ const NavItems = () => {
 
       {!isLandingPage && (
         <div className={cn('flex items-center')}>
-          {/* <Link
-            href="/contact"
-            className="relative font-nunito text-lg font-semibold after:absolute after:bottom-[-5px] after:left-0 after:h-[3px] after:w-full after:rounded-2xl after:bg-[#FB9100] after:transition-all hover:after:w-full"
-          >
-            Book demo
-          </Link> */}
           <Button href="/contact" name="Book A Demo" />
         </div>
       )}

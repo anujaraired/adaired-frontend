@@ -84,7 +84,7 @@ const About = () => {
 
   return (
     <section className="">
-      <MaxWidthWrapper className="py-[2rem] md:py-[8rem]">
+      <MaxWidthWrapper className="py-[2rem] lg:py-[8rem]">
         <Heading
           subTitle={'ABOUT US'}
           title={'Every Brand Has A Story, '}
@@ -92,7 +92,7 @@ const About = () => {
           description={''}
         />
 
-        <div className="relative grid grid-cols-1 gap-5 pt-5 md:grid-cols-2">
+        <div className="relative grid grid-cols-1 gap-5 pt-5 lg:grid-cols-2">
           {/* Image Section */}
           <div className="mx-auto flex-1">
             <div className="h-full max-w-lg overflow-hidden lg:max-w-full">
@@ -108,13 +108,13 @@ const About = () => {
                 alt="About Image"
                 height={87}
                 width={92}
-                className="absolute bottom-[73.5%] left-[70%] md:bottom-0 md:left-[44.25%]"
+                className="absolute bottom-[73.5%] left-[70%] lg:bottom-0 lg:left-[44.25%]"
               />
             </div>
           </div>
 
           {/* Content Section */}
-          <div className="flex-1 p-2 text-center md:text-left">
+          <div className="flex-1 p-2 text-center lg:text-left">
             {/* Points Section */}
             <div className="gap-5 py-6 sm:flex-row">
               {points.map((point, index) => (
@@ -123,7 +123,7 @@ const About = () => {
 
                   <div>
                     <div className="relative py-2 font-nunito text-2xl font-semibold">
-                      <div className="absolute bottom-1 left-1/2 h-0.5 w-14 -translate-x-1/2 rounded-lg text-black md:left-0 md:translate-x-0"></div>
+                      <div className="absolute bottom-1 left-1/2 h-0.5 w-14 -translate-x-1/2 rounded-lg text-black lg:left-0 lg:translate-x-0"></div>
                       <h4 className="">{point.title}</h4>
                     </div>
                     <p className="">{point.description}</p>
@@ -132,7 +132,7 @@ const About = () => {
               ))}
             </div>
 
-            <div className="py-2 text-xs font-semibold text-[#1B5A96] md:text-sm">
+            <div className="py-2 text-xs font-semibold text-[#1B5A96] lg:text-sm">
               {parse(cursive)}
             </div>
 
@@ -149,12 +149,12 @@ const Expect = () => {
 
   return (
     <section className="">
-      <MaxWidthWrapper className="py-[2rem] md:py-[8rem]">
+      <MaxWidthWrapper className="py-[2rem] lg:py-[8rem]">
         <Heading subTitle={subTitle} title={title} span="" description={''} />
 
-        <div className="relative block justify-between gap-2 pt-5 md:flex">
+        <div className="relative block justify-between gap-2 pt-5 lg:flex">
           {/* Image Section */}
-          <div className="h-full w-[100%] overflow-hidden md:w-[40%]">
+          <div className="h-full w-[100%] overflow-hidden lg:w-[40%]">
             <Image
               src={expectImg}
               alt="About Image"
@@ -165,7 +165,7 @@ const Expect = () => {
           </div>
 
           {/* Content Section */}
-          <div className="flex-1 p-2 text-center md:text-left">
+          <div className="flex-1 p-2 text-center lg:text-left">
             <p className="">{description}</p>
             {/* Points Section */}
             <div className="grid grid-cols-1 gap-2 py-6 sm:flex-row md:grid-cols-2">
@@ -181,7 +181,7 @@ const Expect = () => {
                     alt="queen"
                     className="mb-auto"
                   />
-                  <p className="my-auto text-[13px] font-medium text-[#000000] md:text-sm">
+                  <p className="my-auto text-[13px] font-medium text-[#000000] md:text-xs lg:text-sm">
                     {point.title}
                   </p>
                 </div>
@@ -190,16 +190,16 @@ const Expect = () => {
             <p className="">{para2}</p>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-2 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:pt-5 lg:grid-cols-4">
           {records?.map((record, idx) => {
             const isLast = idx === records.length - 1;
 
             return (
               <div
                 key={idx}
-                className={`${!isLast && 'border-[#FB9100w] md:border-r'}`}
+                className={`${!isLast && 'border-[#FB9100w] lg:border-r'}`}
               >
-                <p className="text-center font-nunito text-xl font-semibold text-[#101C3A] md:text-[36px]">
+                <p className="text-center font-nunito text-xl font-semibold text-[#101C3A] lg:text-[36px]">
                   {record.number}+
                 </p>
                 <p className="text-center text-[#656565]">{record.name}</p>
@@ -216,7 +216,7 @@ const WhyChoose = () => {
   const { subTitle, title, description, points } = WhyChooseSectionData;
   const [isHover, setIsHover] = useState<number | null>(1);
   return (
-    <section className="relative pb-[3rem] pt-[5rem] lg:py-[14rem]">
+    <section className="relative pb-[3rem] pt-[5rem] md:py-[14rem]">
       <Image
         src={serviceBg}
         fill
@@ -237,7 +237,7 @@ const WhyChoose = () => {
       />
 
       {/* ---- Top Curve Overlay ---- */}
-      <div className="pointer-events-none absolute left-0 top-0 h-[45px] w-full md:h-[132px]">
+      <div className="pointer-events-none absolute left-0 top-0 h-[45px] w-full md:h-[152px] lg:h-[132px]">
         <Image
           src={WhyChooseTopVector}
           alt="top curve"
@@ -248,7 +248,7 @@ const WhyChoose = () => {
       </div>
 
       {/* ---- Bottom Curve Overlay ---- */}
-      <div className="pointer-events-none absolute bottom-0 left-0 h-[45px] w-full md:h-[132px]">
+      <div className="pointer-events-none absolute bottom-0 left-0 h-[45px] w-full md:h-[152px] lg:h-[132px]">
         <Image
           src={WhyChooseBottomVector}
           alt="bottom curve"
@@ -267,7 +267,7 @@ const WhyChoose = () => {
             isStyped={true}
             isVarticle={true}
           />
-          <div className="mt-[4rem] grid grid-cols-1 gap-[2rem] md:grid-cols-4">
+          <div className="mt-[4rem] grid grid-cols-1 gap-[2rem] lg:grid-cols-4">
             {points?.map((item, idx: any) => {
               const lastCard = idx === points.length - 1;
               const isSecond = idx === 1;
@@ -282,7 +282,7 @@ const WhyChoose = () => {
                 >
                   <div className="flex flex-col items-center gap-3 text-center">
                     {/* ICON CIRCLE */}
-                    <div className="relative flex h-[6rem] w-[6rem] items-center justify-center rounded-full border border-white backdrop-blur-md">
+                    <div className="relative flex h-[6rem] w-[6rem] items-center justify-center rounded-full border border-white backdrop-blur-lg">
                       <Image
                         src={hovered ? ChooseIcon2 : ChooseIcon}
                         width={70}
@@ -294,7 +294,7 @@ const WhyChoose = () => {
 
                     {/* CARD */}
                     <div
-                      className={`mt-[-2.5rem] h-[390px] w-[296px] cursor-pointer rounded-3xl px-[1.5rem] pb-[1.5rem] pt-[3rem] transition-all duration-300 ${hovered ? 'bg-white text-black' : 'bg-[#1A5A9621] text-white'} `}
+                      className={`mt-[-2.5rem] h-[335px] w-[296px] cursor-pointer rounded-3xl px-[1.5rem] pb-[1.5rem] pt-[3rem] transition-all duration-300 md:h-[290] md:w-[420px] lg:h-[360] lg:w-[320px] ${hovered ? 'bg-white text-black' : 'bg-[#1A5A9621] text-white'} `}
                     >
                       <p
                         className={`text-lg ${hovered ? 'font-semibold text-black' : 'font-normal text-white'} `}
@@ -317,7 +317,7 @@ const WhyChoose = () => {
                       width={144}
                       height={134}
                       alt="top curve"
-                      className={`absolute left-[80%] top-1 hidden md:block ${isSecond ? 'rotate-180' : ''} `}
+                      className={`absolute left-[80%] top-1 hidden lg:block ${isSecond ? 'rotate-180' : ''} `}
                       priority
                     />
                   )}
@@ -337,14 +337,14 @@ const CaseStudy = () => {
 
   return (
     <section className="">
-      <MaxWidthWrapper className="py-[2rem] md:py-[6rem]">
+      <MaxWidthWrapper className="py-[2rem] lg:py-[6rem]">
         <Heading
           subTitle={subTitle}
           title={title}
           span={span}
           description={''}
         />
-        <div className="grid grid-cols-1 gap-7 py-[1.5rem] md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-7 py-[1.5rem] md:grid-cols-2 lg:grid-cols-3">
           {studies?.map((study, idx) => {
             return (
               <div
@@ -376,7 +376,7 @@ const CaseStudy = () => {
             );
           })}
         </div>
-        <div className="flex items-center justify-center md:mt-[2rem]">
+        <div className="flex items-center justify-center lg:mt-[2rem]">
           <Button href="/case-studies" name="View All Studies" />
         </div>
       </MaxWidthWrapper>
@@ -399,10 +399,10 @@ const Testimonial = () => {
             isStyped={true}
             isVarticle={true}
             isBgWhite={true}
-            className="w-[90%] md:w-[50%]"
+            className="w-[90%] lg:w-[50%]"
           />
         </div>
-        <div className="grid grid-cols-1 gap-5 px-[3%] pt-[2.5rem] md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 px-[3%] pt-[2.5rem] lg:grid-cols-3">
           {testimonials?.map((testimonial, idx: number) => {
             return (
               <div
@@ -466,8 +466,8 @@ const Contact = () => {
 
   return (
     <section className="">
-      <MaxWidthWrapper className="py-[2rem] md:py-[6rem]">
-        <div className="grid grid-cols-1 md:grid-cols-2">
+      <MaxWidthWrapper className="py-[2rem] lg:py-[6rem]">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
           <div>
             <Heading
               subTitle={subTitle}
@@ -487,13 +487,13 @@ const Contact = () => {
               />
             </div>
           </div>
-          <div className="flex-1 space-y-8 rounded-2xl p-[1rem] text-center shadow-[0_0_20px_rgba(66,71,76,0.08)] md:h-[650px] md:w-[620px] md:p-[3.25rem] md:text-left">
+          <div className="flex-1 space-y-8 rounded-2xl p-[1rem] text-center shadow-[0_0_20px_rgba(66,71,76,0.08)] lg:h-[650px] lg:w-[620px] lg:p-[3.25rem] lg:text-left">
             <div className="flex justify-between">
               <div>
                 <p className="text:[2rem] text-left font-nunito font-medium text-[#120A21] md:text-xl">
                   Let’s Talk
                 </p>
-                <p className="text-left font-nunito text-[14px] font-normal text-[#666666] md:text-center md:text-xs">
+                <p className="text-left font-nunito text-[14px] font-normal text-[#666666] lg:text-center lg:text-xs">
                   Reach out and let’s start the conversation:
                 </p>
               </div>
@@ -507,16 +507,16 @@ const Contact = () => {
                 handleChange={handleChange}
                 placeholder="Name"
               />
-              <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
                 <InputField
-                  className="mt-2 md:my-2"
+                  className="mt-2 lg:my-2"
                   name="email"
                   value={inputValue.email}
                   handleChange={handleChange}
                   placeholder="Email"
                 />
                 <InputField
-                  className="mb-2 md:my-2"
+                  className="mb-2 lg:my-2"
                   name="phone"
                   value={inputValue.phone}
                   handleChange={handleChange}
@@ -542,7 +542,7 @@ const Contact = () => {
                 className="my-2"
               />
             </div>
-            <Button href="" name="Submit"  className="w-full" />
+            <Button href="" name="Submit" className="w-full" />
           </div>
         </div>
       </MaxWidthWrapper>
@@ -554,7 +554,7 @@ const Blogs = () => {
   const { subTitle, title, description, blogs } = BlogSectionData;
   const [isHover, setIsHover] = useState<number | null>(1);
   return (
-    <section className="relative py-6 md:py-[6rem]">
+    <section className="relative py-6 lg:py-[6rem]">
       <div className="absolute inset-0 -z-10 h-[500px]">
         <Image src={blog_bg_opecity} fill alt="blog" className="object-cover" />
       </div>
@@ -568,21 +568,21 @@ const Blogs = () => {
             isStyped={true}
             isVarticle={true}
             isBgWhite={true}
-            className="w-[100%] md:w-[70%]"
+            className="w-[100%] lg:w-[70%]"
           />
         </div>
-        <div className="grid grid-cols-1 gap-7 py-[1.5rem] pt-[3rem] md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-7 py-[1.5rem] pt-[3rem] md:grid-cols-2 lg:grid-cols-3">
           {blogs?.map((blog, idx: number) => {
             return (
               <div
                 key={idx}
                 className={`rounded-3xl shadow-[0_0_20px_rgba(0,0,0,0.14)]`}
               >
-                <div className="relative h-[180px] w-full md:h-[252px]">
+                <div className="relative h-[180px] w-full lg:h-[252px]">
                   <Image src={blogImg} fill alt="" className="object-cover2" />
                 </div>
                 <div className="p-[2rem]">
-                  <p className="pb-[0.5rem] font-nunito text-xs font-[500] text-[#101C3A] md:text-sm">
+                  <p className="pb-[0.5rem] font-nunito text-xs font-[500] text-[#101C3A] lg:text-sm">
                     {blog.title}
                   </p>
                   <div className="flex w-full justify-between border-t pt-[1rem]">
@@ -591,7 +591,7 @@ const Blogs = () => {
                       name="Read More"
                       className="tex-[14px] !bg-yellow-200 py-[6px]"
                     />
-                    <p className="my-auto font-nunito text-[14px] font-medium text-[#C4C4C4] md:text-xs">
+                    <p className="my-auto font-nunito text-[14px] font-medium text-[#C4C4C4] lg:text-xs">
                       30, July 2025
                     </p>
                   </div>
@@ -600,7 +600,7 @@ const Blogs = () => {
             );
           })}
         </div>
-        <div className="flex items-center justify-center md:mt-[2rem]">
+        <div className="flex items-center justify-center lg:mt-[2rem]">
           <Button href="" name="View All Blogs" />
         </div>
       </MaxWidthWrapper>
@@ -644,16 +644,16 @@ const Services = () => {
           />
 
           {/* Main layout */}
-          <div className="z-20 mt-[2.5rem] block rounded-3xl md:flex md:bg-white">
+          <div className="z-20 mt-[2.5rem] block rounded-3xl lg:flex lg:bg-white">
             {/* LEFT SIDE - TABS */}
-            <div className="z-20 w-[100%] md:w-[32%] md:px-[4rem] md:py-[2.5rem]">
+            <div className="z-20 w-[100%] lg:w-[32%] lg:px-[4rem] lg:py-[2.5rem]">
               {services?.map((service, idx) => (
                 <h5
                   key={idx}
                   onClick={() => setActiveTab(idx)}
-                  className={`my-2 w-full cursor-pointer rounded-full border-4 px-[41px] py-[18px] md:my-6 md:w-[440px] ${
+                  className={`my-2 w-full cursor-pointer rounded-full border-4 px-[41px] py-[18px] lg:my-6 lg:w-[440px] ${
                     activeTab === idx
-                      ? 'border-[#EAF5FF] bg-[#1B5A96] font-semibold text-white md:py-[20px]'
+                      ? 'border-[#EAF5FF] bg-[#1B5A96] font-semibold text-white lg:py-[20px]'
                       : 'border-[#EAF5FF] bg-white font-normal text-black'
                   } `}
                 >
@@ -663,7 +663,7 @@ const Services = () => {
             </div>
 
             {/* RIGHT SIDE - ACTIVE TAB CONTENT */}
-            <div className="relative col-span-2 h-[42rem] rounded-3xl bg-[#EAF5FF] p-[1rem] md:pl-[8rem] md:pr-[2.5rem] md:pt-[4rem]">
+            <div className="relative col-span-2 h-[42rem] rounded-3xl bg-[#EAF5FF] p-[1rem] lg:pl-[8rem] lg:pr-[2.5rem] lg:pt-[4rem]">
               <h4 className="mb-4">{services[activeTab].title}</h4>
 
               <p className="mb-6">{services[activeTab].description}</p>
@@ -700,7 +700,7 @@ const Awards = () => {
             items={AwardsSectionData}
             direction="right"
             speed="slow"
-            itemClassName=" w-20 sm:w-32 h-auto md:w-40 px-2 py-2 sm:py-5 sm:px-8"
+            itemClassName=" w-20 sm:w-32 h-auto lg:w-40 px-2 py-2 sm:py-5 sm:px-8"
           />
         </div>
       </MaxWidthWrapper>
