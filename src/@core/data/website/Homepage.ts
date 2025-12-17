@@ -1,7 +1,9 @@
+import { link } from 'fs';
+
 export const AboutSectionData = {
   image: 'Static Website Images/about_main_anwqk5',
-  subTitle: 'About Us',
-  title: 'A Company Obsessed With ROI',
+  subTitle: 'ABOUT US',
+  title: 'Every Brand Has A Story, And We’re Here To Tell It Better!',
   description:
     'Transform your marketing outcomes and experience exponential ROI growth by partnering with Adaired! We offer smart, targeted, integrated campaigns that drive traffic, build engagement, generate conversions, and foster long-term relationships. Our online marketing services will turn your website into a lead-generating machine, and our ongoing efforts will bring in more clients than you can handle.',
   points: [
@@ -241,7 +243,7 @@ export const LogoSliderSectionData = {
 
 export const ServiceSectionData = {
   subtitle: 'OUR SERVICES',
-  title: 'Trusted By Our Clients How We Help Your Brand Grow',
+  title: 'How We Help Your Brand Grow',
   description:
     "Adaired Digital Media believes that every solution should elevate your brand, connect with your target audience, and generate measurable growth. Here's how we accomplish it:",
   services: [
@@ -277,6 +279,7 @@ export const ServiceSectionData = {
       mainSvg: 'Search Engine Optimization_eyQDn',
       hoverSvg: '/assets/images/seo-hover.svg',
       accentColor: '#f89520',
+      link: '/services/search-engine-optimization',
     },
     {
       title: 'Social Media Management',

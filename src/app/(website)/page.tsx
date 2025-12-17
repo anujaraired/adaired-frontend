@@ -54,13 +54,19 @@ import blogImg from '../../../public/assets/images/home/blog.png';
 import reachout from '../../../public/assets/images/home/reachout.png';
 
 import blog_bg_opecity from '../../../public/assets/images/home/blog_bg_opecity.png';
+import certificate_1 from '../../../public/assets/images/certificate/image 1.png';
+import certificate_2 from '../../../public/assets/images/certificate/image 2.png';
+import certificate_3 from '../../../public/assets/images/certificate/image 3.png';
+import certificate_4 from '../../../public/assets/images/certificate/image 4.png';
+import certificate_5 from '../../../public/assets/images/certificate/image 5.png';
+import certificate_6 from '../../../public/assets/images/certificate/image 6.png';
 
 export default function HomePage() {
   return (
     <>
       <HereComponent />
       <About />
-      <Awards />
+      <Certificate />
       <Services />
       <Expect />
       <WhyChoose />
@@ -87,12 +93,9 @@ const About = () => {
   return (
     <section className="">
       <MaxWidthWrapper className="py-[2rem] lg:py-[8rem]">
-        <Heading
-          subTitle={'ABOUT US'}
-          title={'Every Brand Has A Story, '}
-          span="And We’re Here To Tell It Better!"
-          description={''}
-        />
+        <div className="w-[60%]">
+          <Heading subTitle={subTitle} title={title} span="" description={''} />
+        </div>
 
         <div className="relative grid grid-cols-1 gap-5 pt-5 lg:grid-cols-2">
           {/* Image Section */}
@@ -139,6 +142,45 @@ const About = () => {
             </div>
 
             <Button href={'/about'} name={'See What’s Next'} className="mt-9" />
+          </div>
+        </div>
+      </MaxWidthWrapper>
+    </section>
+  );
+};
+
+const Certificate = () => {
+  const certificates = [
+    certificate_6,
+    certificate_1,
+    certificate_2,
+    certificate_3,
+    certificate_4,
+    certificate_5,
+  ];
+  return (
+    <section className="bg-[#FAFDFF]">
+      <MaxWidthWrapper className="py-[2rem] lg:py-[2rem]">
+        <div className="flex justify-between">
+          <div className="my-auto w-[14%]">
+            <p className="my-a text-lg font-medium">
+              CERTIFICATE OF EXCELLENCE
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-between gap-8">
+            {certificates.map((cert, idx) => (
+              <div key={idx} className="relative h-[80px] w-[130px]">
+                <Image
+                  src={cert}
+                  alt={`Certificate ${idx + 1}`}
+                  fill
+                  quality={100}
+                  priority
+                  sizes="150px"
+                  className="object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </MaxWidthWrapper>
@@ -468,7 +510,7 @@ const Contact = () => {
   return (
     <section className="">
       <MaxWidthWrapper className="py-[2rem] lg:py-[6rem]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[4rem]">
+        <div className="grid grid-cols-1 gap-[4rem] lg:grid-cols-2">
           <div>
             <Heading
               subTitle={subTitle}
@@ -478,7 +520,7 @@ const Contact = () => {
               isStyped={true}
               isBgWhite={true}
             />
-            <div className="h-full w-[100%] overflow-hidden mt-3">
+            <div className="mt-3 h-full w-[100%] overflow-hidden">
               <Image
                 src={reachout}
                 alt="About Image"
@@ -664,7 +706,7 @@ const Services = () => {
             </div>
 
             {/* RIGHT SIDE - ACTIVE TAB CONTENT */}
-            <div className="relative col-span-2 h-[42rem] rounded-3xl bg-[#EAF5FF] p-[1rem] lg:pl-[8rem] lg:pr-[2.5rem] lg:pt-[4rem]">
+            <div className="relative col-span-2 rounded-3xl bg-[#EAF5FF] p-[1rem] lg:pl-[8rem] lg:pr-[2.5rem] lg:pt-[4rem]">
               <h4 className="mb-4">{services[activeTab].title}</h4>
 
               <p className="mb-6">{services[activeTab].description}</p>
@@ -683,7 +725,12 @@ const Services = () => {
               <div className="absolute bottom-0 right-[2.5rem] flex items-center justify-center">
                 <Image src={seo} width={472} height={317} alt="sf" />
               </div>
-              <p className="mt-6">{services[activeTab].lastPara}</p>
+              <p className="mt-6">{services[activeTab]?.lastPara}</p>
+              <Button
+                href={services[activeTab]?.link}
+                name="Know More"
+                className="mt-9"
+              />
             </div>
           </div>
         </MaxWidthWrapper>
