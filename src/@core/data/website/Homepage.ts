@@ -62,22 +62,10 @@ export const ExpectSectionData = {
     'At Adaired Digital Media, we don’t just create strategies; we deliver measurable impact. Our approach transforms ideas into action and action into results that are important to your business.',
   btnHref: '/about',
   records: [
-    {
-      number: '7',
-      name: 'Years of Industry Expertise',
-    },
-    {
-      number: '500',
-      name: 'Projects Delivered',
-    },
-    {
-      number: '30M',
-      name: 'Organic Impressions Generated',
-    },
-    {
-      number: '320',
-      name: 'Brands Empowered Globally',
-    },
+    { number: 7, suffix: '+', name: 'Years of Industry Expertise' },
+    { number: 500, suffix: '+', name: 'Projects Delivered' },
+    { number: 30, suffix: 'M+', name: 'Organic Impressions Generated' },
+    { number: 320, suffix: '+', name: 'Brands Empowered Globally' },
   ],
 };
 
