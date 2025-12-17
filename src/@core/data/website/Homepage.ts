@@ -1,4 +1,11 @@
-import { link } from 'fs';
+import blog_1 from '../../../../public/assets/images/blogs/blog_1.png';
+import blog_2 from '../../../../public/assets/images/blogs/blog_2.png';
+import blog_3 from '../../../../public/assets/images/blogs/blog_3.png';
+
+import TransparentProcesses from '../../../../public/assets/icons/Transparent Processes.svg';
+import ExperiencedDigital from '../../../../public/assets/icons/Experienced  Digital Specialists.svg';
+import DedicatedProject from '../../../../public/assets/icons/Dedicated Project Manager.svg';
+import CustomerFirst from '../../../../public/assets/icons/Customer-First Approach.svg';
 
 export const AboutSectionData = {
   image: 'Static Website Images/about_main_anwqk5',
@@ -77,25 +84,25 @@ export const WhyChooseSectionData = {
     'Choosing a digital partner is more than just selecting a service; it is selecting a team that understands your vision, elevates your ideas, and drives the growth your brand deserves.',
   points: [
     {
-      icon: 'Static Website Images/homepage_about2',
+      icon: ExperiencedDigital,
       title: 'Experienced Digital Specialists',
       description:
         "Our team includes skilled digital experts who understand what works in today's competitive environment. From strategy to execution, we have years of hands-on expertise to help your brand grow faster and smarter.",
     },
     {
-      icon: 'Static Website Images/homepage_about1',
+      icon: DedicatedProject,
       title: 'Dedicated Project Manager',
       description:
         'Every client is assigned a single point of contact who understands your objectives, keeps everything on track, and ensures effective communication from beginning to end. There will be no confusion or delays, only seamless project management.',
     },
     {
-      icon: 'Static Website Images/homepage_about2',
+      icon: TransparentProcesses,
       title: 'Transparent Processes',
       description:
         'We believe in honesty at every step. You always know what we’re doing, why we’re doing it, and how it benefits your brand. Clear updates, open communication, and performance reports you can trust.',
     },
     {
-      icon: 'Static Website Images/homepage_about1',
+      icon: CustomerFirst,
       title: 'Customer-First Approach',
       description:
         'Your success is our priority. We listen, we understand, and we tailor our solutions to your needs, not the other way around. Your goals guide our strategy, and your growth drives our decisions.',
@@ -112,7 +119,7 @@ export const CaseStudySectionData = {
     'Choosing a digital partner is more than just selecting a service; it is selecting a team that understands your vision, elevates your ideas, and drives the growth your brand deserves.',
   studies: [
     {
-      image: 'Static Website Images/homepage_about2',
+      image: 'Static Webstudy_3',
       labels: ['Organics', 'SEO'],
       title: 'Digital Agency Businesses',
       description:
@@ -120,7 +127,7 @@ export const CaseStudySectionData = {
       bgColor: '#FFF4F3',
     },
     {
-      image: 'Static Website Images/homepage_about1',
+      image: 'Static Webstudy_3',
       labels: ['Organics', 'SEO'],
       title: 'Digital Agency Businesses',
       description:
@@ -128,7 +135,7 @@ export const CaseStudySectionData = {
       bgColor: '#D7EBFF',
     },
     {
-      image: 'Static Website Images/homepage_about2',
+      image: 'Static Webstudy_3',
       labels: ['Organics', 'SEO'],
       title: 'Digital Agency Businesses',
       description:
@@ -454,7 +461,7 @@ export const BlogSectionData = {
     'We’re a digital agency that transforms businesses into brands. With the perfect blend of strategy and creativity.',
   blogs: [
     {
-      image: 'Static Website Images/homepage_about2',
+      image: blog_1,
       title: 'We’re a digital agency that transforms businesses into brands.',
       description:
         'We’re a digital agency that transforms businesses into brands. With the perfect blend of strategy and creativity, we help you stand out.',
@@ -462,7 +469,7 @@ export const BlogSectionData = {
       rating: 5,
     },
     {
-      image: 'Static Website Images/homepage_about1',
+      image: blog_2,
       title: 'We’re a digital agency that transforms businesses into brands.',
       description:
         'We’re a digital agency that transforms businesses into brands. With the perfect blend of strategy and creativity, we help you stand out.',
@@ -470,7 +477,7 @@ export const BlogSectionData = {
       rating: 5,
     },
     {
-      image: 'Static Website Images/homepage_about2',
+      image: blog_3,
       title: 'We’re a digital agency that transforms businesses into brands.',
       description:
         'We’re a digital agency that transforms businesses into brands. With the perfect blend of strategy and creativity, we help you stand out.',

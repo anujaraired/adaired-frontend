@@ -56,13 +56,19 @@ import blogImg from '../../../public/assets/images/home/blog.png';
 import reachout from '../../../public/assets/images/home/reachout.png';
 
 import blog_bg_opecity from '../../../public/assets/images/home/blog_bg_opecity.png';
-import certificate_1 from '../../../public/assets/images/certificate/image 1.png';
-import certificate_2 from '../../../public/assets/images/certificate/image 2.png';
-import certificate_3 from '../../../public/assets/images/certificate/image 3.png';
-import certificate_4 from '../../../public/assets/images/certificate/image 4.png';
-import certificate_5 from '../../../public/assets/images/certificate/image 5.png';
-import certificate_6 from '../../../public/assets/images/certificate/image 6.png';
+import certificate_1 from '../../../public/assets/images/certificate/Group 4 (1).png';
+import certificate_2 from '../../../public/assets/images/certificate/Group 4 (2).png';
+import certificate_3 from '../../../public/assets/images/certificate/Group 4 (3).png';
+import certificate_4 from '../../../public/assets/images/certificate/Group 4 (4).png';
+import certificate_5 from '../../../public/assets/images/certificate/Group 4 (5).png';
+import certificate_6 from '../../../public/assets/images/certificate/Group 4 (6).png';
+import certificate_7 from '../../../public/assets/images/certificate/Group 4 (7).png';
+import certificate_8 from '../../../public/assets/images/certificate/Group 4.png';
 import CountUp from './components/CountUp';
+import { link } from 'fs';
+import study_1 from '../../../public/assets/images/case_staudy/case_study.webp';
+import study_2 from '../../../public/assets/images/case_staudy/case_study_2.webp';
+import study_3 from '../../../public/assets/images/case_staudy/case_study_3.webp';
 
 export default function HomePage() {
   return (
@@ -160,19 +166,19 @@ const Certificate = () => {
     certificate_3,
     certificate_4,
     certificate_5,
+    certificate_7,
+    certificate_8,
   ];
   return (
     <section className="bg-[#FAFDFF]">
       <MaxWidthWrapper className="py-[2rem] lg:py-[2rem]">
         <div className="flex justify-between">
           <div className="my-auto w-[14%]">
-            <p className="my-a text-lg font-medium">
-              CERTIFICATE OF EXCELLENCE
-            </p>
+            <p className="my-a text-lg font-medium">OUT TRUSTED CLIENTS</p>
           </div>
           <div className="flex flex-wrap justify-between gap-8">
             {certificates.map((cert, idx) => (
-              <div key={idx} className="relative h-[80px] w-[130px]">
+              <div key={idx} className="relative h-[60px] w-[120px]">
                 <Image
                   src={cert}
                   alt={`Certificate ${idx + 1}`}
@@ -275,37 +281,6 @@ const WhyChoose = () => {
         className="object-cover"
         priority
       />
-      {/* <Image
-        src={WhyChooseBgOpecity}
-        fill
-        width={undefined}
-        height={undefined}
-        alt="d"
-        className="object-cover"
-        priority
-      /> */}
-
-      {/* ---- Top Curve Overlay ---- */}
-      {/* <div className="pointer-events-none absolute left-0 top-0 h-[45px] w-full md:h-[152px] lg:h-[132px]">
-        <Image
-          src={WhyChooseTopVector}
-          alt="top curve"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div> */}
-
-      {/* ---- Bottom Curve Overlay ---- */}
-      {/* <div className="pointer-events-none absolute bottom-0 left-0 h-[45px] w-full md:h-[152px] lg:h-[132px]">
-        <Image
-          src={WhyChooseBottomVector}
-          alt="bottom curve"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div> */}
       <div className="relative z-20">
         <MaxWidthWrapper>
           <Heading
@@ -331,13 +306,15 @@ const WhyChoose = () => {
                 >
                   <div className="flex flex-col items-center gap-3 text-center">
                     {/* ICON CIRCLE */}
-                    <div className="relative flex h-[6rem] w-[6rem] items-center justify-center rounded-full border border-white backdrop-blur-lg">
+                    <div
+                      className={`relative flex h-[6rem] w-[6rem] items-center justify-center rounded-full border ${hovered ? 'border-[#FF9E2C]' : 'border-white'} backdrop-blur-lg`}
+                    >
                       <Image
                         src={hovered ? ChooseIcon2 : ChooseIcon}
                         width={70}
                         height={70}
                         alt=""
-                        className={`absolute bottom-0 rounded-full object-contain p-[1rem] ${hovered ? 'bg-[#FF9E2C] text-white' : 'bg-white'} `}
+                        className={`rounded-full object-contain p-[1rem] ${hovered ? 'bg-[#FF9E2C] text-white' : 'bg-white'} `}
                       />
                     </div>
 
@@ -381,8 +358,37 @@ const WhyChoose = () => {
 };
 
 const CaseStudy = () => {
-  const { image, subTitle, title, span, description, studies } =
-    CaseStudySectionData;
+  const { image, subTitle, title, span, description } = CaseStudySectionData;
+
+  const studies = [
+    {
+      image: study_1,
+      labels: ['Agency Analytics', 'Canva'],
+      title: 'Green Choice Carpet Cleaning',
+      description:
+        "Our team includes skilled digital experts who understand what works in today's competitive environment. From strategy to execution, we have years of hands-on expertise to help your brand grow faster and smarter.",
+      bgColor: '#FFF4F3',
+      link: '/case-studies/green-choice-carpet-cleaning',
+    },
+    {
+      image: study_2,
+      labels: ['Agency Analytics', 'Canva'],
+      title: 'AMPT Calgary Electricians',
+      description:
+        'Every client is assigned a single point of contact who understands your objectives, keeps everything on track, and ensures effective communication from beginning to end. There will be no confusion or delays, only seamless project management.',
+      bgColor: '#D7EBFF',
+      link: '/case-studies/ampt-calgary-electricians',
+    },
+    {
+      image: study_3,
+      labels: ['Agency Analytics', 'Canva'],
+      title: 'Bayside Heating and Cooling',
+      description:
+        'We believe in honesty at every step. You always know what we’re doing, why we’re doing it, and how it benefits your brand. Clear updates, open communication, and performance reports you can trust.',
+      bgColor: '#E1F2E2',
+      link: '/case-studies/bayside-heating-and-cooling',
+    },
+  ];
 
   return (
     <section className="">
@@ -401,7 +407,7 @@ const CaseStudy = () => {
                 className={`rounded-3xl p-[1.5rem]`}
                 style={{ backgroundColor: study.bgColor }}
               >
-                <Image src={studiesImg} width={400} height={258} alt="" />
+                <Image src={study?.image} width={400} height={258} alt="" />
                 <div className="flex gap-2 py-[1rem]">
                   {study?.labels?.map((label) => {
                     return (
@@ -628,7 +634,12 @@ const Blogs = () => {
                 className={`rounded-3xl shadow-[0_0_20px_rgba(0,0,0,0.14)]`}
               >
                 <div className="relative h-[180px] w-full lg:h-[252px]">
-                  <Image src={blogImg} fill alt="" className="object-cover2" />
+                  <Image
+                    src={blog?.image}
+                    fill
+                    alt=""
+                    className="object-cover2"
+                  />
                 </div>
                 <div className="p-[2rem]">
                   <p className="pb-[0.5rem] font-nunito text-xs font-[500] text-[#101C3A] lg:text-sm">
