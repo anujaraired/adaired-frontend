@@ -9,8 +9,8 @@ import CldImage from '@/app/(website)/components/CloudinaryImageComponent';
 import parse from 'html-react-parser';
 import { InfiniteMovingCards } from '../../@core/ui/aceternity-ui/infinite-moving-cards';
 import HomepageForm from './components/forms/HomepageForm';
-import img from '../../../public/assets/images/hero_image_bhw.png';
-import expectImg from '../../../public/not-found.png';
+import img from '../../../public/assets/images/home/aboutus.png';
+import expectImg from '../../../public/assets/images/home/expect.png';
 import chat from '../../../public/assets/icons/chat.png';
 import win from '../../../public/assets/icons/win.png';
 import { IoCheckmark } from 'react-icons/io5';
@@ -51,6 +51,8 @@ import { IoIosArrowRoundForward } from 'react-icons/io';
 import { MdOutlineStar } from 'react-icons/md';
 import google from '../../../public/assets/icons/goole.png';
 import blogImg from '../../../public/assets/images/home/blog.png';
+import reachout from '../../../public/assets/images/home/reachout.png';
+
 import blog_bg_opecity from '../../../public/assets/images/home/blog_bg_opecity.png';
 
 export default function HomePage() {
@@ -119,7 +121,7 @@ const About = () => {
             <div className="gap-5 py-6 sm:flex-row">
               {points.map((point, index) => (
                 <div key={index} className="flex gap-4">
-                  <div className="mt-3 h-6 w-2 bg-[#FB9100]"></div>
+                  <div className="mt-3 h-6 w-2 bg-[#1B5A96]"></div>
 
                   <div>
                     <div className="relative py-2 font-nunito text-2xl font-semibold">
@@ -133,7 +135,7 @@ const About = () => {
             </div>
 
             <div className="py-2 text-xs font-semibold text-[#1B5A96] lg:text-sm">
-              {parse(cursive)}
+              {cursive}
             </div>
 
             <Button href={'/about'} name={'See What’s Next'} className="mt-9" />
@@ -150,11 +152,13 @@ const Expect = () => {
   return (
     <section className="">
       <MaxWidthWrapper className="py-[2rem] lg:py-[8rem]">
-        <Heading subTitle={subTitle} title={title} span="" description={''} />
+        <div className="w-[60%]">
+          <Heading subTitle={subTitle} title={title} span="" description={''} />
+        </div>
 
-        <div className="relative block justify-between gap-2 pt-5 lg:flex">
+        <div className="relative grid grid-cols-1 gap-[4rem] pt-7 md:grid-cols-2 lg:flex">
           {/* Image Section */}
-          <div className="h-full w-[100%] overflow-hidden lg:w-[40%]">
+          <div className="h-full overflow-hidden">
             <Image
               src={expectImg}
               alt="About Image"
@@ -168,12 +172,9 @@ const Expect = () => {
           <div className="flex-1 p-2 text-center lg:text-left">
             <p className="">{description}</p>
             {/* Points Section */}
-            <div className="grid grid-cols-1 gap-2 py-6 sm:flex-row md:grid-cols-2">
+            <div className="py-6">
               {points.map((point, index) => (
-                <div
-                  key={index}
-                  className="flex gap-4 rounded-lg border border-[#FFCA8B] p-[1.25rem]"
-                >
+                <div key={index} className="my-[1rem] flex gap-4 rounded-lg">
                   <Image
                     src={queen}
                     width={30}
@@ -190,7 +191,7 @@ const Expect = () => {
             <p className="">{para2}</p>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:pt-5 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-2 md:mt-[4rem] md:grid-cols-2 lg:grid-cols-4">
           {records?.map((record, idx) => {
             const isLast = idx === records.length - 1;
 
@@ -467,19 +468,19 @@ const Contact = () => {
   return (
     <section className="">
       <MaxWidthWrapper className="py-[2rem] lg:py-[6rem]">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[4rem]">
           <div>
             <Heading
               subTitle={subTitle}
               title={title}
               span={''}
-              description={''}
+              description={description}
               isStyped={true}
               isBgWhite={true}
             />
-            <div className="h-full w-[45%] overflow-hidden">
+            <div className="h-full w-[100%] overflow-hidden mt-3">
               <Image
-                src={expectImg}
+                src={reachout}
                 alt="About Image"
                 height={507}
                 width={642}

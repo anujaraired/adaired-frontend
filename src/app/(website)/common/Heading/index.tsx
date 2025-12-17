@@ -57,9 +57,9 @@ const Heading = ({
             </div>
           ) : (
             <div
-              className={`block lg:grid ${isBgWhite ? 'grid-cols-1' : 'grid-cols-3'} gap-5`}
+              className={`block lg:grid ${isBgWhite ? 'grid-cols-1' : 'grid-cols-3'}`}
             >
-              <div className={`col-span-2 w-full md:w-[60%] md:leading-[60px]`}>
+              <div className={`col-span-2 w-full md:w-[75%] md:leading-[60px]`}>
                 <h2
                   className={`md:pt-4 ${isBgWhite ? 'text-black' : 'text-white'} `}
                 >
@@ -67,13 +67,17 @@ const Heading = ({
                   {span}
                 </h2>
               </div>
-              <p className="py-3 text-sm text-white">{description}</p>
+              <p
+                className={`py- text-sm ${isBgWhite ? 'text-black' : 'text-white'} py-3`}
+              >
+                {description}
+              </p>
             </div>
           )}
         </div>
       ) : (
         <div>
-          <div className="block w-fit gap-3 md:flex">
+          <div className="md:flex` block w-fit gap-3">
             <div className="flex gap-3">
               <Image
                 src={star}
@@ -88,7 +92,7 @@ const Heading = ({
               </span>
               <div className="mb-auto mt-3 h-0.5 w-24 bg-[#D7EBFF]"></div>
             </div>
-            <div className="mt-[10px] md:mt-[-20px]">
+            <div className="mt-[1px] md:mt-[0px]">
               <h2 className="leading-tight">
                 {title} <br></br>
                 {span}

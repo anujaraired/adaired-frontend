@@ -6,7 +6,9 @@ import bgGrid from '../../../../../public/assets/images/home/bg_grid.png';
 import bgImag2 from '../../../../../public/assets/images/home//bgImag2.png';
 
 import cartoonMegaphones from '../../../../../public/assets/images/home/cartoon-megaphones.png';
-import headerImage from '../../../../../public/assets/images/home/headerImage.png';
+// import headerImage from '../../../../../public/assets/images/home/headerImage.png';
+import headerImage from '../../../../../public/assets/images/home/headerImage (2).png';
+
 import star from '../../../../../public/assets//icons/star.png';
 
 import Image from 'next/image';
@@ -87,11 +89,7 @@ const HereComponent = () => {
               </p>
               <p className="text-xxs text-black lg:text-sm">🎯 Engage & Grow</p>
             </div>
-            <Button
-              href="/contact"
-              name="Start Your Journey"
-              className="mt-3"
-            />
+            <Button href="/contact" name="Get a Quote" className="mt-3" />
           </div>
         </div>
       </MaxWidthWrapper>

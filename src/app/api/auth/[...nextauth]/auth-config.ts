@@ -1,11 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { routes } from '@/config/routes';
-import {
-  NextAuthConfig,
-  Role,
-  Session,
-  User,
-} from 'next-auth';
+import { NextAuthConfig, Role, Session, User } from 'next-auth';
 import Google from 'next-auth/providers/google';
 import Credentials from 'next-auth/providers/credentials';
 import { JWT } from 'next-auth/jwt';
@@ -16,7 +11,6 @@ const isAuthRoute = (pathname: string) => {
   const authRoutePatterns = [/\/auth\/signin/, /\/auth\/signup/];
   return authRoutePatterns.some((pattern) => pattern.test(pathname));
 };
-
 
 interface AuthToken extends JWT {
   _id: string;
@@ -248,13 +242,7 @@ export default {
       }
       return token;
     },
-    async session({
-      session,
-      token,
-    }: {
-      session: Session;
-      token: AuthToken;
-    }) {
+    async session({ session, token }: { session: Session; token: AuthToken }) {
       if (!token || !token.expiresAt || typeof token.expiresAt !== 'string') {
         // Invalidate session
         session.expires = new Date(0).toISOString() as any;

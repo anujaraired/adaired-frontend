@@ -19,7 +19,7 @@ export const AboutSectionData = {
     },
   ],
   cursive:
-    '<p>"As a powerhouse digital agency, we craft bold ideas backed by data and fueled by creativity that attract attention, command authority, and convert consistently. If you want a partner that pushes limits and powers real growth, you’re in the right place." -<i style="color: #92288D;">Jeff Bezos</i></p>',
+    'As a powerhouse digital agency, we craft bold ideas backed by data and fueled by creativity that attract attention, command authority, and convert consistently.',
   btnText: 'See What’s Next',
   btnHref: '/about',
 };
@@ -27,7 +27,7 @@ export const AboutSectionData = {
 export const ExpectSectionData = {
   image: 'Static Website Images/about_main_anwqk5',
   subTitle: 'What You Can Expect',
-  title: 'Proven Growth Across Industry',
+  title: 'Digital Marketing Experts Dedicated To Your Growth',
   description:
     "Our clients, from startups to established brands, experience measurable increases in traffic, engagement, leads, and revenue. Every campaign, design, and post is intended to aid your growth. We've helped brands transform their digital presences, build loyal audiences, and exceed their growth goals. When you work with us, you are investing in outcomes rather than simply marketing.",
   points: [
@@ -241,7 +241,7 @@ export const LogoSliderSectionData = {
 
 export const ServiceSectionData = {
   subtitle: 'OUR SERVICES',
-  title: 'How We Help Your Brand Grow',
+  title: 'Trusted By Our Clients How We Help Your Brand Grow',
   description:
     "Adaired Digital Media believes that every solution should elevate your brand, connect with your target audience, and generate measurable growth. Here's how we accomplish it:",
   services: [
@@ -331,7 +331,7 @@ export const ServiceSectionData = {
     {
       title: 'Content Marketing',
       description:
-        'Content is more than just words; it is a means of connecting with, educating, and inspiring your target audience. We create content that builds trust and gets results',
+        'Content is more than just words; it is a means of connecting with, educating, and inspiring your target audience. We create content that builds trust and gets results.',
       list: [
         'Blog & Article Writing',
         'Website and Landing Page Content',
@@ -422,10 +422,10 @@ export const AwardsSectionData = [
 
 export const ContactSectionData = {
   image: 'Static Website Images/contact_us_image',
-  subTitle: 'CONTACT US',
-  title: 'Reach Us Today',
+  subTitle: 'READY TO GROW?',
+  title: 'Reach Us',
   description:
-    'Connect for more website traffic, qualified leads, and an established online brand image.',
+    'Stay ahead in the digital world with our latest tips and practical strategies. From marketing trends to SEO insights, our blog helps you grow smarter and faster.',
   contactDetails: [
     {
       href: 'mailto:info@adaired.com',

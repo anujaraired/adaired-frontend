@@ -47,23 +47,44 @@ const ContactPageForm = () => {
   });
 
   const onSubmit = async (values: SchemaType) => {
-    const token = await executeRecaptcha('contact_page_form');
+    try {
+      const token = await executeRecaptcha('contact_page_form');
+      if (!token) return;
 
-    if (token) {
       values.gRecaptchaToken = token;
-      reset();
-      router.push('/thankyou');
-      try {
-        const response = await fetch('/api/zoho/leadRegister', {
+
+      // 🔥 CALL BOTH APIS IN PARALLEL
+      await Promise.all([
+        // Zoho CRM API
+        // fetch('/api/zoho/leadRegister', {
+        //   method: 'POST',
+        //   headers: {
+        //     'Content-Type': 'application/json',
+        //   },
+        //   body: JSON.stringify(values),
+        // }),
+
+        // Mail API (Node backend)
+        fetch(`https://adaired-backend.onrender.com/api/v2/mail/send`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(values),
-        });
-      } catch (error) {
-        throw new Error('Failed to send data to Zoho CRM');
-      }
+          body: JSON.stringify({
+            name: values.name,
+            email: values.email,
+            phone: values.phone,
+            message: values.message,
+            formId: values.formId,
+          }),
+        }),
+      ]);
+
+      reset();
+      // router.push('/thankyou');
+    } catch (error) {
+      console.error(error);
+      alert('Failed to submit form');
     }
   };
 
