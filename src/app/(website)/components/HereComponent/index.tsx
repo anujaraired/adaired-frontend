@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import MaxWidthWrapper from '../MaxWidthWrapper';
 import bgImage from '../../../../../public/assets/images/home/bgImage.png';
 import bgGrid from '../../../../../public/assets/images/home/bg_grid.png';
@@ -13,8 +13,10 @@ import star from '../../../../../public/assets//icons/star.png';
 
 import Image from 'next/image';
 import Button from '../../common/Button';
+import GetQuoteModal from '../popup/GetQuoteModal';
 
 const HereComponent = () => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="relative w-full">
       <Image
@@ -89,10 +91,15 @@ const HereComponent = () => {
               </p>
               <p className="text-xxs text-black lg:text-sm">🎯 Engage & Grow</p>
             </div>
-            <Button href="/contact" name="Get a Quote" className="mt-3" />
+            <Button
+              onClick={() => setOpen(true)}
+              name="Get a Quote"
+              className="mt-3"
+            />
           </div>
         </div>
       </MaxWidthWrapper>
+      {<GetQuoteModal isOpen={open} onClose={() => setOpen(false)} />}
     </div>
   );
 };

@@ -8,7 +8,7 @@ export interface MessageFieldProps {
   className?: string;
 }
 
-const index = ({
+const MessageField = ({
   name,
   value,
   handleChange,
@@ -27,4 +27,4 @@ const index = ({
   );
 };
 
-export default index;
+export default MessageField;

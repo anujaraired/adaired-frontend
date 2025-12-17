@@ -69,6 +69,8 @@ import { link } from 'fs';
 import study_1 from '../../../public/assets/images/case_staudy/case_study.webp';
 import study_2 from '../../../public/assets/images/case_staudy/case_study_2.webp';
 import study_3 from '../../../public/assets/images/case_staudy/case_study_3.webp';
+import useImageAnimation from '@/@core/hooks/useImageAnimation';
+import useHoverZoom from '@/@core/hooks/useHoverZoom';
 
 export default function HomePage() {
   return (
@@ -98,7 +100,11 @@ const About = () => {
     btnText,
     btnHref,
   } = AboutSectionData;
-
+  const { ref, className } = useImageAnimation({
+    direction: 'left',
+    delay: 350,
+  });
+  
   return (
     <section className="">
       <MaxWidthWrapper className="py-[2rem] lg:py-[8rem]">
@@ -109,7 +115,10 @@ const About = () => {
         <div className="relative grid grid-cols-1 gap-5 pt-5 lg:grid-cols-2">
           {/* Image Section */}
           <div className="mx-auto flex-1">
-            <div className="h-full max-w-lg overflow-hidden lg:max-w-full">
+            <div
+              ref={ref}
+              className={`h-full max-w-lg overflow-hidden lg:max-w-full ${className}`}
+            >
               <Image
                 src={img}
                 alt="About Image"
@@ -199,7 +208,10 @@ const Certificate = () => {
 const Expect = () => {
   const { image, subTitle, title, description, points, para2, records } =
     ExpectSectionData;
-
+  const { ref, className } = useImageAnimation({
+    direction: 'left',
+    delay: 350,
+  });
   return (
     <section className="">
       <MaxWidthWrapper className="py-[2rem] lg:py-[8rem]">
@@ -209,7 +221,7 @@ const Expect = () => {
 
         <div className="relative grid grid-cols-1 gap-[4rem] pt-7 md:grid-cols-2 lg:flex">
           {/* Image Section */}
-          <div className="h-full overflow-hidden">
+          <div className={`h-full overflow-hidden ${className}`} ref={ref}>
             <Image
               src={expectImg}
               alt="About Image"
@@ -296,10 +308,14 @@ const WhyChoose = () => {
               const lastCard = idx === points.length - 1;
               const isSecond = idx === 1;
               const hovered = isHover === idx;
-
+              const zoom = useHoverZoom({
+                scaleIn: 1.1,
+                scaleOut: 0.9,
+              });
               return (
                 <div
                   key={idx}
+                  {...zoom.handlers}
                   onMouseEnter={() => setIsHover(idx)}
                   onMouseLeave={() => setIsHover(1)}
                   className="relative"
@@ -507,6 +523,10 @@ const Contact = () => {
     service: '',
     message: '',
   });
+  const { ref, className } = useImageAnimation({
+    direction: 'left',
+    delay: 350,
+  });
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -532,7 +552,7 @@ const Contact = () => {
               isStyped={true}
               isBgWhite={true}
             />
-            <div className="mt-3 h-full w-[100%] overflow-hidden">
+            <div className={`h-full overflow-hidden ${className}`} ref={ref}>
               <Image
                 src={reachout}
                 alt="About Image"
@@ -671,7 +691,10 @@ const Blogs = () => {
 const Services = () => {
   const { subtitle, title, description, services } = ServiceSectionData;
   const [activeTab, setActiveTab] = useState(0);
-
+  const zoom = useHoverZoom({
+    scaleIn: 1.1,
+    scaleOut: 0.9,
+  });
   return (
     <section className="relative py-6 lg:py-[6rem]">
       {/* Backgrounds */}
