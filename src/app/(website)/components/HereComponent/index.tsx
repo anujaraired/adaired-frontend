@@ -67,7 +67,7 @@ const HereComponent = () => {
               </h1>
             </div>
             <div className="absolute right-0 top-0 lg:right-[25%]">
-              <div className="relative h-[5rem] w-[5rem] lg:h-[7rem] lg:w-[7rem]">
+              <div className="relative h-[5rem] w-[5rem] animate-scale-up delay-300 lg:h-[7rem] lg:w-[7rem]">
                 <Image
                   src={cartoonMegaphones}
                   fill
@@ -87,9 +87,12 @@ const HereComponent = () => {
             </p>
             <div className="flex gap-2 py-4">
               <p className="text-xxs text-black lg:text-sm">
-                🚀 Transform Your Business
+                <span className="animate-bounce"> 🚀</span> Transform Your
+                Business
               </p>
-              <p className="text-xxs text-black lg:text-sm">🎯 Engage & Grow</p>
+              <p className="text-xxs text-black lg:text-sm">
+                <span className="animate-bounce"> 🎯</span> Engage & Grow
+              </p>
             </div>
             <Button
               onClick={() => setOpen(true)}

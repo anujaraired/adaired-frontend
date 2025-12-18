@@ -104,7 +104,7 @@ const About = () => {
     direction: 'left',
     delay: 350,
   });
-  
+
   return (
     <section className="">
       <MaxWidthWrapper className="py-[2rem] lg:py-[8rem]">
@@ -195,7 +195,7 @@ const Certificate = () => {
                   quality={100}
                   priority
                   sizes="150px"
-                  className="object-contain"
+                  className="object-contain duration-300 ease-in-out hover:scale-110"
                 />
               </div>
             ))}
@@ -323,7 +323,7 @@ const WhyChoose = () => {
                   <div className="flex flex-col items-center gap-3 text-center">
                     {/* ICON CIRCLE */}
                     <div
-                      className={`relative flex h-[6rem] w-[6rem] items-center justify-center rounded-full border ${hovered ? 'border-[#FF9E2C]' : 'border-white'} backdrop-blur-lg`}
+                      className={`relative z-10 flex h-[6rem] w-[6rem] items-center justify-center rounded-full border ${hovered ? 'border-[#FF9E2C]' : 'border-white'} backdrop-blur-lg`}
                     >
                       <Image
                         src={hovered ? ChooseIcon2 : ChooseIcon}
@@ -336,7 +336,7 @@ const WhyChoose = () => {
 
                     {/* CARD */}
                     <div
-                      className={`mt-[-2.5rem] h-[335px] w-[296px] cursor-pointer rounded-3xl px-[1.5rem] pb-[1.5rem] pt-[3rem] transition-all duration-300 md:h-[290] md:w-[420px] lg:h-[360] lg:w-[320px] ${hovered ? 'bg-white text-black' : 'bg-[#1A5A9621] text-white'} `}
+                      className={`mt-[-2.5rem] h-[335px] w-[296px] cursor-pointer rounded-3xl border p-6 px-[1.5rem] pb-[1.5rem] pt-[3rem] transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl md:h-[290] md:w-[420px] lg:h-[360] lg:w-[320px] ${hovered ? 'bg-white text-black' : 'bg-[#1A5A9621] text-white'} `}
                     >
                       <p
                         className={`text-lg ${hovered ? 'font-semibold text-black' : 'font-normal text-white'} `}
@@ -423,7 +423,13 @@ const CaseStudy = () => {
                 className={`rounded-3xl p-[1.5rem]`}
                 style={{ backgroundColor: study.bgColor }}
               >
-                <Image src={study?.image} width={400} height={258} alt="" />
+                <Image
+                  src={study?.image}
+                  width={400}
+                  height={258}
+                  alt=""
+                  className="transition-transform duration-500 ease-in-out hover:scale-110"
+                />
                 <div className="flex gap-2 py-[1rem]">
                   {study?.labels?.map((label) => {
                     return (
@@ -653,12 +659,12 @@ const Blogs = () => {
                 key={idx}
                 className={`rounded-3xl shadow-[0_0_20px_rgba(0,0,0,0.14)]`}
               >
-                <div className="relative h-[180px] w-full lg:h-[252px]">
+                <div className="relative h-[180px] w-full overflow-hidden rounded-r-2xl lg:h-[252px]">
                   <Image
                     src={blog?.image}
                     fill
                     alt=""
-                    className="object-cover2"
+                    className="rounded-r-2xl object-cover transition-transform duration-500 ease-in-out hover:scale-110"
                   />
                 </div>
                 <div className="p-[2rem]">
