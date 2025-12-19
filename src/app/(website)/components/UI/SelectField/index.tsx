@@ -9,7 +9,7 @@ export interface SelectFieldProps {
   className?: string;
 }
 
-const Index = ({
+const SelectField = ({
   name,
   value,
   handleChange,
@@ -22,7 +22,7 @@ const Index = ({
       name={name}
       value={value}
       onChange={handleChange}
-      className={`${className} border-none w-full rounded-md bg-[#F8F8F8] px-4 py-3 text-xs font-normal text-black outline-none placeholder:text-[#A3A3A3] focus:border-[#000000]`}
+      className={`${className} w-full rounded-md border-none bg-[#F8F8F8] px-4 py-3 text-xs font-normal text-black outline-none placeholder:text-[#A3A3A3] focus:border-[#000000]`}
     >
       {placeholder && (
         <option value="" disabled hidden>
@@ -39,4 +39,4 @@ const Index = ({
   );
 };
 
-export default Index;
+export default SelectField;

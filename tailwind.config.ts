@@ -48,6 +48,15 @@ const config: Omit<Config, 'prefix' | 'presets' | 'content'> = {
       padding: '2rem',
     },
     extend: {
+      keyframes: {
+        softBounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-6px)' },
+        },
+      },
+      animation: {
+        softBounce: 'softBounce 1.6s ease-in-out infinite',
+      },
       fontSize: {
         xxs: '14px',
         xs: '16px',
@@ -158,127 +167,127 @@ const config: Omit<Config, 'prefix' | 'presets' | 'content'> = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
-      keyframes: {
-        'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-        },
-        'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
-        },
-        marquee: {
-          from: {
-            transform: 'translateX(0)',
-          },
-          to: {
-            transform: 'translateX(calc(-100% - var(--gap)))',
-          },
-        },
-        'marquee-vertical': {
-          from: {
-            transform: 'translateY(0)',
-          },
-          to: {
-            transform: 'translateY(calc(-100% - var(--gap)))',
-          },
-        },
-        scroll: {
-          to: {
-            transform: 'translate(calc(-50% - 0.5rem))',
-          },
-        },
-        blink: {
-          '0%': {
-            opacity: '0.2',
-          },
-          '20%': {
-            opacity: '1',
-          },
-          '100%': {
-            opacity: '0.2',
-          },
-        },
-        scaleUp: {
-          '0%': {
-            transform: 'scale(0)',
-          },
-          '100%': {
-            transform: 'scale(1)',
-          },
-        },
-        popup: {
-          '0%': {
-            transform: 'scale(0)',
-          },
-          '50%': {
-            transform: 'scale(1.3)',
-          },
-          '100%': {
-            transform: 'scale(1)',
-          },
-        },
-        skeletonWave: {
-          '0%': {
-            transform: 'translateX(-100%)',
-          },
-          '50%': {
-            transform: 'translateX(100%)',
-          },
-          '100%': {
-            transform: 'translateX(100%)',
-          },
-        },
-        spinnerSpin: {
-          '0%': {
-            transform: 'rotate(0deg)',
-          },
-          '100%': {
-            transform: 'rotate(360deg)',
-          },
-        },
-        whatsappFloatingPulse: {
-          '0%': {
-            boxShadow: '0 0 0 0 rgba(37, 211, 101, 0.75)',
-          },
-          '100%': {
-            boxShadow: '0 0 0 5px rgba(37, 211, 101, 0)',
-          },
-        },
-        skypeFloatingPulse: {
-          '0%': {
-            boxShadow: '0 0 0 0 rgba(225, 217, 255)',
-          },
-          '100%': {
-            boxShadow: '0 0 0 5px rgba(37, 211, 101, 0)',
-          },
-        },
-      },
-      animation: {
-        whatsappFloatingPulse: 'whatsappFloatingPulse 1s infinite',
-        skypeFloatingPulse: 'skypeFloatingPulse 1s infinite',
-        marquee: 'marquee var(--duration) linear infinite',
-        'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
-        scroll:
-          'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
-        blink: 'blink 1.4s infinite both;',
-        'scale-up': 'scaleUp 500ms infinite alternate',
-        'spin-slow': 'spin 4s linear infinite',
-        popup: 'popup 500ms var(--popup-delay, 0ms) linear 1',
-        skeleton: 'skeletonWave 1.6s linear 0.5s infinite',
-        'spinner-ease-spin': 'spinnerSpin 0.8s ease infinite',
-        'spinner-linear-spin': 'spinnerSpin 0.8s linear infinite',
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-      },
+      // keyframes: {
+      //   'accordion-down': {
+      //     from: {
+      //       height: '0',
+      //     },
+      //     to: {
+      //       height: 'var(--radix-accordion-content-height)',
+      //     },
+      //   },
+      //   'accordion-up': {
+      //     from: {
+      //       height: 'var(--radix-accordion-content-height)',
+      //     },
+      //     to: {
+      //       height: '0',
+      //     },
+      //   },
+      //   marquee: {
+      //     from: {
+      //       transform: 'translateX(0)',
+      //     },
+      //     to: {
+      //       transform: 'translateX(calc(-100% - var(--gap)))',
+      //     },
+      //   },
+      //   'marquee-vertical': {
+      //     from: {
+      //       transform: 'translateY(0)',
+      //     },
+      //     to: {
+      //       transform: 'translateY(calc(-100% - var(--gap)))',
+      //     },
+      //   },
+      //   scroll: {
+      //     to: {
+      //       transform: 'translate(calc(-50% - 0.5rem))',
+      //     },
+      //   },
+      //   blink: {
+      //     '0%': {
+      //       opacity: '0.2',
+      //     },
+      //     '20%': {
+      //       opacity: '1',
+      //     },
+      //     '100%': {
+      //       opacity: '0.2',
+      //     },
+      //   },
+      //   scaleUp: {
+      //     '0%': {
+      //       transform: 'scale(0)',
+      //     },
+      //     '100%': {
+      //       transform: 'scale(1)',
+      //     },
+      //   },
+      //   popup: {
+      //     '0%': {
+      //       transform: 'scale(0)',
+      //     },
+      //     '50%': {
+      //       transform: 'scale(1.3)',
+      //     },
+      //     '100%': {
+      //       transform: 'scale(1)',
+      //     },
+      //   },
+      //   skeletonWave: {
+      //     '0%': {
+      //       transform: 'translateX(-100%)',
+      //     },
+      //     '50%': {
+      //       transform: 'translateX(100%)',
+      //     },
+      //     '100%': {
+      //       transform: 'translateX(100%)',
+      //     },
+      //   },
+      //   spinnerSpin: {
+      //     '0%': {
+      //       transform: 'rotate(0deg)',
+      //     },
+      //     '100%': {
+      //       transform: 'rotate(360deg)',
+      //     },
+      //   },
+      //   whatsappFloatingPulse: {
+      //     '0%': {
+      //       boxShadow: '0 0 0 0 rgba(37, 211, 101, 0.75)',
+      //     },
+      //     '100%': {
+      //       boxShadow: '0 0 0 5px rgba(37, 211, 101, 0)',
+      //     },
+      //   },
+      //   skypeFloatingPulse: {
+      //     '0%': {
+      //       boxShadow: '0 0 0 0 rgba(225, 217, 255)',
+      //     },
+      //     '100%': {
+      //       boxShadow: '0 0 0 5px rgba(37, 211, 101, 0)',
+      //     },
+      //   },
+      // },
+      // animation: {
+      //   whatsappFloatingPulse: 'whatsappFloatingPulse 1s infinite',
+      //   skypeFloatingPulse: 'skypeFloatingPulse 1s infinite',
+      //   marquee: 'marquee var(--duration) linear infinite',
+      //   'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+      //   scroll:
+      //     'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
+      //   blink: 'blink 1.4s infinite both;',
+      //   'scale-up': 'scaleUp 500ms infinite alternate',
+      //   'spin-slow': 'spin 4s linear infinite',
+      //   popup: 'popup 500ms var(--popup-delay, 0ms) linear 1',
+      //   skeleton: 'skeletonWave 1.6s linear 0.5s infinite',
+      //   'spinner-ease-spin': 'spinnerSpin 0.8s ease infinite',
+      //   'spinner-linear-spin': 'spinnerSpin 0.8s linear infinite',
+      //   'accordion-down': 'accordion-down 0.2s ease-out',
+      //   'accordion-up': 'accordion-up 0.2s ease-out',
+      // },
       backgroundImage: {
         'custom-gradient':
           'linear-gradient(90deg, #1D78CE 0%, #1B5A96 33%, #1B5A96 66%, #1D78CE 100%)',
@@ -313,6 +322,35 @@ const config: Omit<Config, 'prefix' | 'presets' | 'content'> = {
         '51': '51',
         '52': '52',
       },
+    },
+    keyframes: {
+      stepBounce1: {
+        '0%, 80%, 100%': { transform: 'translateY(0)' },
+        '10%': { transform: 'translateY(-8px)' },
+      },
+      stepBounce2: {
+        '0%, 10%, 90%, 100%': { transform: 'translateY(0)' },
+        '25%': { transform: 'translateY(-8px)' },
+      },
+      stepBounce3: {
+        '0%, 30%, 100%': { transform: 'translateY(0)' },
+        '45%': { transform: 'translateY(-8px)' },
+      },
+      stepBounce4: {
+        '0%, 50%, 100%': { transform: 'translateY(0)' },
+        '65%': { transform: 'translateY(-8px)' },
+      },
+      slide: {
+        '0%': { transform: 'translateX(0)' },
+        '100%': { transform: 'translateX(-50%)' },
+      },
+    },
+    animation: {
+      step1: 'stepBounce1 4s ease-in-out infinite',
+      step2: 'stepBounce2 4s ease-in-out infinite',
+      step3: 'stepBounce3 4s ease-in-out infinite',
+      step4: 'stepBounce4 4s ease-in-out infinite',
+      slide: 'slide 20s linear infinite',
     },
   },
   plugins: [

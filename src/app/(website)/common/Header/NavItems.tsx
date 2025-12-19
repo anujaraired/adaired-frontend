@@ -265,7 +265,7 @@ const Item = ({
       <div className={cn('group flex items-center')}>
         <Link
           className={cn(
-            'relative flex h-20 items-center gap-1 px-2 font-nunito text-xs font-normal after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-0 after:bg-[#FB9100] after:transition-all after:duration-300 hover:after:w-full',
+            'relative flex items-center gap-1 rounded-full px-[2rem] py-[1rem] font-nunito text-xs font-normal after:transition-all after:duration-300 hover:bg-[#FFECD580]',
             isLandingPage ? 'font-poppins text-[17px] font-medium' : ''
           )}
           style={{ color: '#000000' }}
@@ -274,9 +274,6 @@ const Item = ({
         >
           {navitems.label}
           {(navitems.subItems || navitems.childrens) && (
-            // <Icons.IcBaselineArrowDropDown
-            //   className={cn('h-4 w-4 transition-all group-hover:rotate-180')}
-            // />
             <IoIosArrowDown className="my-auto" />
           )}
         </Link>
@@ -287,3 +284,5 @@ const Item = ({
 };
 
 export default NavItems;
+
+// 'relative flex h-20 items-center gap-1 px-2 font-nunito text-xs font-normal after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-0 after:bg-[#FB9100] after:transition-all after:duration-300 hover:after:w-full',

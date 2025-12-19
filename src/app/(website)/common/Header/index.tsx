@@ -52,16 +52,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* <Topbar
-        className={cn(
-          isWindowScrollingUp || isAtTop
-            ? 'origin-top scale-y-100'
-            : 'origin-top scale-y-0'
-        )}
-        session={session}
-        pathname={pathname}
-      /> */}
-
       <section
         className={cn(
           'sticky top-0 z-[100] transition-shadow duration-300',
@@ -71,7 +61,8 @@ const Navbar = () => {
         )}
       >
         <div className="sticky inset-x-0 top-0 z-50 h-16 bg-white lg:h-20">
-          <header className="relative flex items-center bg-white">
+          <div className="h-[6rem] bg-[#F28F17]"></div>
+          <header className="relative -mt-[3rem] flex w-[100%] items-center rounded-full border-[1px] border-[#0000001A] bg-white py-1">
             <WrapperComponent
               className={cn(
                 `${pathname.startsWith('/expert-content-solutions') ? '!py-0 xl:!py-0 2xl:!py-0 3xl:!py-0' : ''}`
@@ -89,8 +80,8 @@ const Navbar = () => {
                         <CldImage
                           src="Static Website Images/adaired_logo.png"
                           alt="Brand Logo"
-                          height={78}
-                          width={150}
+                          height={55}
+                          width={145}
                           priority
                         />
                       </div>

@@ -87,7 +87,7 @@ const Button = ({
     width ? 'w-full' : 'w-fit'
   } items-center justify-center gap-2
   overflow-hidden rounded-[60px]
-  bg-custom-gradient px-[28px] py-[11px]
+  bg-custom-gradient px-[28px] py-[0.75rem]
   font-nunito text-xs font-normal text-white
   transition-transform duration-200 active:scale-95
 
