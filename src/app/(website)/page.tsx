@@ -18,15 +18,15 @@ import Blogs from './components/home/Blogs';
 export default function HomePage() {
   return (
     <>
-      {/* <HereComponent /> */}
-      {/* <About />
+      <HereComponent />
+      <About />
       <Services />
       <Expect />
       <WhyChoose />
       <CaseStudy />
       <Testimonial />
       <Contact />
-      <Blogs /> */}
+      <Blogs />
     </>
   );
 }
