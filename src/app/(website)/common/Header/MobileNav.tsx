@@ -81,7 +81,7 @@ const MobileNav: React.FC<MobileNavProps> = ({
             </div>
             <div>
               <ul className="space-y-4">
-                {routes.websiteNav.map((item) => (
+                {/* {routes.websiteNav.map((item) => (
                   <li
                     key={item.label}
                     onClick={() => {
@@ -111,7 +111,7 @@ const MobileNav: React.FC<MobileNavProps> = ({
                       )}
                     </Link>
                   </li>
-                ))}
+                ))} */}
               </ul>
             </div>
           </div>
