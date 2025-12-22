@@ -25,7 +25,7 @@ export const routes = {
     {
       label: 'Services',
       value: 'services' as const,
-      // href: "#",
+      href: '#',
       subItems: [
         {
           name: 'Web Design & Development',
@@ -230,7 +230,7 @@ export const routes = {
       label: 'Resources',
       value: 'resources' as const,
       href: '#',
-      childrens: [
+      subItems: [
         {
           name: 'Career',
           href: '/career',
