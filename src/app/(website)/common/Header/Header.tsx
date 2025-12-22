@@ -7,9 +7,10 @@ import Button from '../Button';
 import { routes } from '../../../../config/routes';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import Link from 'next/link';
-
+import { usePathname } from 'next/navigation';
+import img from '../../../../../public/assets/triexgagykxxpxhfvx8e.webp';
 const Header = () => {
-  const [active, setActive] = useState(0);
+  const pathname = usePathname();
   const [hover, setHover] = useState<number | null>(null);
   const { websiteNav } = routes;
 
@@ -25,7 +26,6 @@ const Header = () => {
             <div className="flex justify-between gap-4">
               {websiteNav.map((menu, idx) => {
                 const isHover = hover === idx;
-
                 return (
                   <div
                     key={idx}
@@ -35,7 +35,7 @@ const Header = () => {
                     {/* MAIN MENU */}
                     <Link
                       href={menu.href}
-                      className={`font-Outfit flex items-center gap-1 rounded-full px-8 py-3 text-xs transition ${isHover ? 'bg-[#FFECD580]' : ''}`}
+                      className={`font-Outfit flex items-center gap-1 rounded-full px-6 py-3 text-xs transition ${pathname === menu.href && 'bg-[#FFECD580]'} ${isHover ? 'bg-[#FFECD580]' : ''}`}
                     >
                       {menu.label}
                       {menu.subItems && <MdKeyboardArrowDown size={18} />}
@@ -44,7 +44,7 @@ const Header = () => {
                     {/* MEGA MENU */}
                     {menu.subItems && (
                       <div
-                        className={`absolute left-0 right-0 top-[150%] z-50 transition-all duration-300 ease-out ${
+                        className={`absolute left-0 right-0 top-[115%] z-50 transition-all duration-300 ease-out ${
                           isHover
                             ? 'pointer-events-auto translate-y-0 opacity-100'
                             : 'pointer-events-none -translate-y-3 opacity-0'
@@ -52,13 +52,13 @@ const Header = () => {
                       >
                         {/* ===================== RESOURCES MENU ===================== */}
                         {menu.label === 'Resources' ? (
-                          <div className="mx-auto ml-[51%] w-fit rounded-xl bg-white p-4 shadow-xl">
+                          <div className="mx-auto ml-[51%] w-fit rounded-xl bg-white p-4 shadow-lg">
                             <ul className="space-y-2">
                               {menu.subItems.map((item, i) => (
                                 <li key={i}>
                                   <Link
                                     href={item.href}
-                                    className="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-black"
+                                    className="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:text-[#F28F17]"
                                   >
                                     {item.name}
                                   </Link>
@@ -68,8 +68,8 @@ const Header = () => {
                           </div>
                         ) : (
                           /* ===================== SERVICES MEGA MENU ===================== */
-                          <div className="mx-auto max-w-[1400px] rounded-2xl bg-white p-10 shadow-xl">
-                            <div className="grid grid-cols-4 gap-10">
+                          <div className="mx-auto max-w-[1400px] rounded-2xl bg-white p-10 shadow-lg">
+                            <div className="grid grid-cols-4 gap-4">
                               {/* SERVICES */}
                               <div className="col-span-3 grid grid-cols-3 gap-8">
                                 {menu.subItems.map((sub, i) => (
@@ -87,7 +87,7 @@ const Header = () => {
                                           <li key={j}>
                                             <Link
                                               href={item.href}
-                                              className="flex items-center gap-2 text-xs text-gray-600 hover:text-black"
+                                              className="flex items-center gap-2 text-xs text-gray-600 hover:text-[#F28F17]"
                                             >
                                               <span className="h-2 w-2 rounded bg-gray-300"></span>
                                               {item.name}
@@ -106,25 +106,31 @@ const Header = () => {
                                   What’s New
                                 </p>
 
-                                <div className="rounded-xl border p-3 shadow-sm">
-                                  <img
-                                    src="/blog-thumb.jpg"
-                                    className="mb-3 w-full rounded-lg"
+                                <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-200/20 to-transparent shadow-lg">
+                                  <Image
+                                    src={img}
+                                    width={208}
+                                    height={208}
+                                    quality={100}
+                                    className="w-full object-cover"
                                     alt=""
                                   />
 
-                                  <span className="inline-block rounded-full bg-purple-100 px-3 py-1 text-[10px] text-purple-600">
-                                    Web Development
-                                  </span>
+                                  <div className="p-3">
+                                    <span className="inline-block rounded-full bg-[#A100A1] px-3 py-1 text-xxs font-normal text-white">
+                                      Web Development
+                                    </span>
 
-                                  <p className="mt-2 text-sm font-medium">
-                                    What Skills Should Great Web Developers
-                                    Have?
-                                  </p>
+                                    <p className="mt-2 text-sm font-medium">
+                                      What Skills Should Great Web Developers
+                                      Have? And How Adaired Excels Every
+                                      Benchmark!
+                                    </p>
 
-                                  <p className="mt-1 text-xs text-gray-500">
-                                    By Adaired Team · 8 min read
-                                  </p>
+                                    <p className="mt-1 text-xs text-gray-500">
+                                      By Adaired Team · 8 min read
+                                    </p>
+                                  </div>
                                 </div>
 
                                 <Link
