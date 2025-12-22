@@ -23,7 +23,7 @@ const Header = () => {
             <div>
               <Image src={logo} width={145} height={55} alt="brand logo" />
             </div>
-            <div className="flex justify-between gap-4">
+            <div className="flex justify-between gap-2">
               {websiteNav.map((menu, idx) => {
                 const isHover = hover === idx;
                 return (
@@ -35,7 +35,7 @@ const Header = () => {
                     {/* MAIN MENU */}
                     <Link
                       href={menu.href}
-                      className={`font-Outfit flex items-center gap-1 rounded-full px-6 py-3 text-xs transition ${pathname === menu.href && 'bg-[#FFECD580]'} ${isHover ? 'bg-[#FFECD580]' : ''}`}
+                      className={`font-Outfit flex items-center rounded-full px-8 py-3 text-xs text-[#000000] transition ${pathname === menu.href && 'bg-[#FFECD580]'} ${isHover ? 'bg-[#FFECD580]' : ''}`}
                     >
                       {menu.label}
                       {menu.subItems && <MdKeyboardArrowDown size={18} />}
@@ -44,7 +44,7 @@ const Header = () => {
                     {/* MEGA MENU */}
                     {menu.subItems && (
                       <div
-                        className={`absolute left-0 right-0 top-[115%] z-50 transition-all duration-300 ease-out ${
+                        className={`absolute left-0 right-0 top-[110%] z-50 transition-all duration-300 ease-out ${
                           isHover
                             ? 'pointer-events-auto translate-y-0 opacity-100'
                             : 'pointer-events-none -translate-y-3 opacity-0'
@@ -81,21 +81,23 @@ const Header = () => {
                                       {sub.name}
                                     </Link>
 
-                                    <ul className="space-y-2">
-                                      {sub.subItems?.map(
-                                        (item: any, j: number) => (
-                                          <li key={j}>
-                                            <Link
-                                              href={item.href}
-                                              className="flex items-center gap-2 text-xs text-gray-600 hover:text-[#F28F17]"
-                                            >
-                                              <span className="h-2 w-2 rounded bg-gray-300"></span>
-                                              {item.name}
-                                            </Link>
-                                          </li>
-                                        )
-                                      )}
-                                    </ul>
+                                    {'subItems' in sub && (
+                                      <ul className="space-y-2">
+                                        {sub.subItems?.map(
+                                          (item: any, j: number) => (
+                                            <li key={j}>
+                                              <Link
+                                                href={item.href}
+                                                className="flex items-center gap-2 text-xs text-gray-600 hover:text-[#F28F17]"
+                                              >
+                                                <span className="h-2 w-2 rounded bg-gray-300"></span>
+                                                {item.name}
+                                              </Link>
+                                            </li>
+                                          )
+                                        )}
+                                      </ul>
+                                    )}
                                   </div>
                                 ))}
                               </div>
