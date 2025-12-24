@@ -30,7 +30,7 @@ const HereComponent = () => {
         className="object-cover"
         priority
       />
-      <MaxWidthWrapper className="py-[2rem] lg:pb-[5rem] lg:pt-[9rem]">
+      <MaxWidthWrapper className="pb-[2rem] pt-[9rem] md:py-[10rem] lg:pb-[5rem] lg:pt-[9rem]">
         {/* <Image
           src={bgGrid}
           fill
@@ -48,7 +48,7 @@ const HereComponent = () => {
           className="hidden lg:block"
         /> */}
         <div className="relative">
-          <div className="animate-step1 absolute left-[160px] top-[90px] cursor-pointer">
+          <div className="absolute -top-[30px] hidden animate-step1 cursor-pointer md:left-[40px] md:top-[60px] md:block lg:left-[160px] lg:top-[90px]">
             <p className="font-Outfit border-[1px] border-[#FB910024] bg-white px-[1rem] py-1 text-[12px] font-normal hover:bg-[#F28F17] hover:text-white">
               Adverting{' '}
             </p>
@@ -57,7 +57,7 @@ const HereComponent = () => {
               className="absolute -bottom-2 -right-5 -rotate-90 text-[#F28F17]"
             />
           </div>
-          <div className="animate-step2 absolute right-[160px] top-[90px] cursor-pointer delay-200">
+          <div className="absolute right-[10px] top-[70px] hidden animate-step2 cursor-pointer delay-200 md:right-[40px] md:top-[60px] md:block">
             <p className="font-Outfit border-[1px] border-[#FB910024] bg-white px-[1rem] py-1 text-[12px] font-normal hover:bg-[#F28F17] hover:text-white">
               Analytics{' '}
             </p>
@@ -66,7 +66,7 @@ const HereComponent = () => {
               className="absolute -bottom-2 -right-5 -rotate-90 text-[#F28F17]"
             />
           </div>
-          <div className="animate-step3 delay-400 absolute left-[150px] top-[340px] cursor-pointer">
+          <div className="delay-400 absolute left-[100px] top-[330px] hidden animate-step3 cursor-pointer md:block lg:left-[150px] lg:top-[340px]">
             <p className="font-Outfit border-[1px] border-[#FB910024] bg-white px-[1rem] py-1 text-[12px] font-normal hover:bg-[#F28F17] hover:text-white">
               Digital{' '}
             </p>
@@ -75,7 +75,7 @@ const HereComponent = () => {
               className="absolute -bottom-2 -right-5 -rotate-90 text-[#F28F17]"
             />
           </div>
-          <div className="animate-step4 delay-600 absolute right-[350px] top-[340px] cursor-pointer">
+          <div className="delay-600 absolute right-[90px] top-[330px] hidden animate-step4 cursor-pointer md:block lg:right-[350px] lg:top-[340px]">
             <p className="font-Outfit border-[1px] border-[#FB910024] bg-white px-[1rem] py-1 text-[12px] font-normal hover:bg-[#F28F17] hover:text-white">
               Insights{' '}
             </p>
@@ -93,17 +93,17 @@ const HereComponent = () => {
                 className="my-auto object-cover"
               />
             </span>
-            <span className="text-md font-normal text-[#000000]">
+            <span className="pb-[1rem] text-xxs font-normal text-[#000000] md:pb-0 md:text-md">
               WELCOME TO ADAIRED
             </span>
           </div>
-          <p className="font-Outfit text-upercase text-center text-[92.46px] font-[700] tracking-tighter text-[#1B5A96]">
+          <p className="font-Outfit text-upercase text-center text-[30px] font-[700] tracking-tighter text-[#1B5A96] md:text-[45px] lg:text-[92.46px]">
             THE DRIVING FORCE
           </p>
-          <p className="font-Outfit text-center text-[92.46px] font-[700] leading-[62px] tracking-tighter text-[#000000]">
+          <p className="font-Outfit text-center text-[30px] font-[700] tracking-tighter text-[#000000] md:text-[45px] md:leading-[62px] lg:text-[92.46px]">
             Behind The Brands That Lead
           </p>
-          <p className="font-Outfit px-[15%] py-[2.5rem] text-center text-xs font-normal leading-[28px] text-[#000000]">
+          <p className="font-Outfit py-[1rem] text-center text-xs font-normal leading-[28px] text-[#000000] md:px-[15%] md:py-[2.5rem]">
             In a world where thousands of brands compete for a moment's
             attention, being seen isn’t enough. You want to be remembered,
             right? And that’s where Adaired Digital Media comes in. Offering a
@@ -111,7 +111,10 @@ const HereComponent = () => {
             rise above the noise and claim your space in the digital world.
           </p>
           <div className="flex justify-center gap-2">
-            <SaveAndCancel name="Get a Quote" />
+            <SaveAndCancel
+              name="Get a Quote"
+              className="block w-full space-y-2 md:flex md:w-fit"
+            />
           </div>
         </div>
       </MaxWidthWrapper>
